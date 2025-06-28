@@ -1,10 +1,88 @@
 @import "tailwindcss";
 
 .bg-zoom-transition {
-    transition: background-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background-size: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
-.bg-zoom-transition:hover {
-    background-size: 120%;
+.bg-zoom-transition::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+    will-change: transform;
+}
+
+.bg-zoom-transition:hover::before {
+    transform: scale(1.2);
+}
+
+#uxui {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#uxui.active {
+    transform: translate(8px, -8px) rotate(2deg);
+}
+
+#web1 {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: rotate(-2deg);
+}
+
+#web1.active {
+    transform: translate(-8px, -16px) rotate(-4deg);
+}
+
+#web2 {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: rotate(2deg);
+}
+
+#web2.active {
+    transform: translate(12px, -24px) rotate(4deg);
+}
+
+#system1 {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: rotate(3deg);
+}
+#system2 {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: rotate(8deg);
+}
+#system3 {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: rotate(12deg);
+}
+#system1.active {
+    transform: translate(0, -10px) rotate(4deg);
+}
+#system2.active {
+    transform: translate(24px, -12px) rotate(8deg);
+}
+#system3.active {
+    transform: translate(24px, -24px) rotate(16deg);
+}
+.btn-gradient {
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    transition-duration: 0.3s;
 }
