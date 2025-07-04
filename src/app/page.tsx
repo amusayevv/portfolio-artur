@@ -5,20 +5,31 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import Cursor from "./_components/cursor";
-
-const hours = String(new Date().getHours()).padStart(2, "0");
-const minutes = String(new Date().getMinutes()).padStart(2, "0");
-const currentTime: string = hours + ":" + minutes;
+import PortfolioCard from "./_components/portfolioCard";
+import { LightningBoltIcon } from "@radix-ui/react-icons";
+import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 
 export default function Page() {
-    // useEffect(() => {
-    //     gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-    //     ScrollSmoother.create({
-    //         smooth: 1,
-    //         effects: true,
-    //     });
-    // }, []);
+        ScrollSmoother.create({
+            smooth: 1,
+            effects: true,
+            normalizeScroll: true,
+        });
+
+        gsap.registerPlugin(ScrambleTextPlugin);
+        gsap.to(".scrambleText", {
+            duration: 1.5,
+            scrambleText: {
+                text: "{original}",
+                chars: "upperAndLowerCase",
+                revealDelay: 0.5,
+            },
+            ease: "power1.inOut",
+        });
+    }, []);
 
     function handleUxUiMouseEnter() {
         document.querySelector("#uxui")?.classList.add("active");
@@ -67,11 +78,12 @@ export default function Page() {
     }, []);
 
     return (
-        <div>
+        <div id="smooth-wrapper">
             <Cursor text="VIEW PROJECT" />
 
-            <div>
+            <div id="smooth-content">
                 <section
+                    id="home"
                     className="h-dvh flex w-full px-6 items-center justify-around"
                     style={{
                         background:
@@ -81,12 +93,45 @@ export default function Page() {
                     <div className="flex flex-col items-start gap-6">
                         <div className="flex inset-shadow-2xs inset-shadow-gray-600 rounded-full bg-white/10 text-white items-center gap-3 px-4 py-2">
                             <div className="w-[10px] h-[10px] bg-green-400 rounded-full"></div>
-                            <p>Dubai - United Arab Emirates | {currentTime}</p>
+                            <p>Available to work</p>
                         </div>
-                        <h1 className="text-6xl font-semibold max-w-[1000px] bg-[linear-gradient(180deg,#FFF_30%,#999_100%)] bg-clip-text text-transparent">
-                            Hi, I'm Artur. UX/UI Designer Crafting Intuitive &
-                            Beautiful Experiences.
+                        <h1 className="text-[4rem] leading-[120%] font-semibold max-w-[1000px] text-white">
+                            <div className="overflow-hidden py-1">
+                                <p className="text-animate">Making Complex</p>
+                            </div>
+                            <div className="overflow-hidden py-1">
+                                <p className="text-animate">
+                                    Simple & Consistent
+                                </p>
+                            </div>
                         </h1>
+                        <div className="flex gap-10 flex-col">
+                            <div className="overflow-hidden">
+                                <p className="text-animate whitespace-nowrap flex gap-5 text-2xl content-center items-center">
+                                    UX • UI • Product • Design Systems
+                                    <span className="flex gap-1 items-center">
+                                        <LightningBoltIcon className="w-6 h-6" />
+                                        AI Toolkit
+                                    </span>
+                                </p>
+                            </div>
+                            <div>
+                                <a
+                                    href="https://www.linkedin.com/in/artur-yurin/"
+                                    className="button-link px-8 py-3 rounded-[0.5rem] font-semibold"
+                                    target="_blank"
+                                >
+                                    Get in touch
+                                </a>
+                                <a
+                                    href="https://www.linkedin.com/in/artur-yurin/"
+                                    className="px-8 py-3 rounded-[0.5rem] font-semibold hover:text-white/60"
+                                    target="_blank"
+                                >
+                                    Explore projects
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <img
                         src="iPhone-16-Pro.png"
@@ -94,248 +139,53 @@ export default function Page() {
                         className="w-[320px] h-auto object-contain mt-auto"
                     />
                 </section>
-
-                <section className="mt-[100px] px-6 flex flex-col gap-10">
+                <section
+                    id="projects"
+                    className="mt-[100px] px-6 flex flex-col gap-10"
+                >
                     <h2 className="text-[32px]">Projects</h2>
-                    <div>
-                        <div className="grid grid-cols-2 gap-6">
-                            <a
-                                href="#"
-                                className="project rounded-2xl h-[480px] bg-[url('/project1.webp')] bg-cover bg-center bg-zoom-transition"
-                            ></a>
-                            <div className="flex flex-col justify-between">
-                                <div className="flex flex-col gap-4">
-                                    <div className="flex gap-4">
-                                        <img
-                                            src="insider.svg"
-                                            alt="star logo"
-                                        />
-                                        <h4 className="font-medium text-[24px]">
-                                            Insider
-                                        </h4>
-                                    </div>
-                                    <p className="text-white/60 leading-[150%]">
-                                        Insider is a smart dashboard that boosts
-                                        your digital experience with quick
-                                        access, skill-building tools, and an
-                                        automated Trading Bot.
-                                    </p>
-                                </div>
-                                <div className="flex justify-between">
-                                    <div className="flex flex-col gap-1">
-                                        <p className="text-white/60">Links</p>
-                                        <p>Notion</p>
-                                        <p>Figma</p>
-                                    </div>
-                                    <div className="flex flex-col gap-1">
-                                        <p className="text-white/60">
-                                            Industry
-                                        </p>
-                                        <p>Crypto</p>
-                                        <p>Web 3</p>
-                                    </div>
-                                    <div className="flex flex-col gap-1 text-right">
-                                        <p className="text-white/60">
-                                            Delieverables
-                                        </p>
-                                        <p>UX/UI design</p>
-                                        <p>Logo design</p>
-                                    </div>
-                                </div>
-                            </div>
+                    <div className="grid grid-cols-2 gap-10">
+                        <div className="flex flex-col gap-10" data-speed="1.4">
+                            <PortfolioCard
+                                imgpath="/project1.webp"
+                                logopath="/insider.svg"
+                                url="#"
+                                title="Insider"
+                                description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
+                            />
+                            <PortfolioCard
+                                imgpath="/project2.webp"
+                                logopath="/confero.svg"
+                                url="#"
+                                title="Confero"
+                                description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
+                            />
+                            <PortfolioCard
+                                imgpath="/project3.webp"
+                                logopath="/confero.svg"
+                                url="#"
+                                title="Confero"
+                                description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
+                            />
                         </div>
-                    </div>
-                    <div>
-                        <div className="grid grid-cols-2 gap-6">
-                            <a
-                                href="#"
-                                className="project rounded-2xl h-[480px] bg-[url('/project2.webp')] bg-cover bg-center bg-zoom-transition"
-                            ></a>
-                            <div className="flex flex-col justify-between">
-                                <div className="flex flex-col gap-4">
-                                    <div className="flex gap-4">
-                                        <img
-                                            src="confero.svg"
-                                            alt="star logo"
-                                        />
-                                        <h4 className="font-medium text-[24px]">
-                                            Confero Desktop
-                                        </h4>
-                                    </div>
-                                    <p className="text-white/60 leading-[150%]">
-                                        Confero for Desktop delivers the full
-                                        power of enterprise communication. With
-                                        a spacious interface designed for
-                                        multitasking, it supports high-quality
-                                        video conferencing, deep collaboration,
-                                        and integrated productivity tools for
-                                        remote teams.{" "}
-                                    </p>
-                                </div>
-                                <div className="flex justify-between">
-                                    <div className="flex flex-col gap-1">
-                                        <p className="text-white/60">Links</p>
-                                        <a href="#">Notion</a>
-                                        <a href="#">Figma</a>
-                                    </div>
-                                    <div className="flex flex-col gap-1">
-                                        <p className="text-white/60">
-                                            Industry
-                                        </p>
-                                        <p>Corporate</p>
-                                    </div>
-                                    <div className="flex flex-col gap-1 text-right">
-                                        <p className="text-white/60">
-                                            Delieverables
-                                        </p>
-                                        <p>UI/UX design</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className="grid grid-cols-2 gap-6">
-                            <a
-                                href="#"
-                                className="project rounded-2xl h-[480px] bg-[url('/project3.webp')] bg-cover bg-center bg-zoom-transition"
-                            ></a>
-                            <div className="flex flex-col justify-between">
-                                <div className="flex flex-col gap-4">
-                                    <div className="flex gap-4">
-                                        <img
-                                            src="confero.svg"
-                                            alt="star logo"
-                                        />
-                                        <h4 className="font-medium text-[24px]">
-                                            Confero Mobile
-                                        </h4>
-                                    </div>
-                                    <p className="text-white/60 leading-[150%]">
-                                        Confero Mobile empowers teams on the go
-                                        with seamless video calls, real-time
-                                        messaging, and intuitive collaboration
-                                        tools—ideal for staying connected during
-                                        commutes, fieldwork, or while traveling.
-                                    </p>
-                                </div>
-                                <div className="flex justify-between">
-                                    <div className="flex flex-col gap-1">
-                                        <p className="text-white/60">Links</p>
-                                        <a href="#">Notion</a>
-                                        <a href="#">Figma</a>
-                                    </div>
-                                    <div className="flex flex-col gap-1">
-                                        <p className="text-white/60">
-                                            Industry
-                                        </p>
-                                        <p>Corporate</p>
-                                    </div>
-                                    <div className="flex flex-col gap-1 text-right">
-                                        <p className="text-white/60">
-                                            Delieverables
-                                        </p>
-                                        <p>UI/UX design</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className="grid grid-cols-2 gap-6">
-                            <a
-                                href="#"
-                                className="project rounded-2xl h-[480px] bg-[url('/project4.webp')] bg-cover bg-center bg-zoom-transition"
-                            ></a>
-                            <div className="flex flex-col justify-between">
-                                <div className="flex flex-col gap-4">
-                                    <div className="flex gap-4">
-                                        <img
-                                            src="confero.svg"
-                                            alt="star logo"
-                                        />
-                                        <h4 className="font-medium text-[24px]">
-                                            Confero TV
-                                        </h4>
-                                    </div>
-                                    <p className="text-white/60 leading-[150%]">
-                                        Confero TV transforms your living room
-                                        or meeting space into a smart
-                                        collaboration hub. Perfect for group
-                                        calls and presentations, it brings video
-                                        conferencing to the big screen,
-                                        enhancing visibility and engagement for
-                                        team-wide discussions.{" "}
-                                    </p>
-                                </div>
-                                <div className="flex justify-between">
-                                    <div className="flex flex-col gap-1">
-                                        <p className="text-white/60">Links</p>
-                                        <a href="#">Notion</a>
-                                        <a href="#">Figma</a>
-                                    </div>
-                                    <div className="flex flex-col gap-1">
-                                        <p className="text-white/60">
-                                            Industry
-                                        </p>
-                                        <p>Corporate</p>
-                                    </div>
-                                    <div className="flex flex-col gap-1 text-right">
-                                        <p className="text-white/60">
-                                            Delieverables
-                                        </p>
-                                        <p>UI/UX design</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className="grid grid-cols-2 gap-6">
-                            <a
-                                href="#"
-                                className="project rounded-2xl h-[480px] bg-[url('/project5.webp')] bg-cover bg-center bg-zoom-transition"
-                            ></a>
-                            <div className="flex flex-col justify-between">
-                                <div className="flex flex-col gap-4">
-                                    <div className="flex gap-4">
-                                        <img src="sbc.svg" alt="star logo" />
-                                        <h4 className="font-medium text-[24px]">
-                                            SBC admin
-                                        </h4>
-                                    </div>
-                                    <p className="text-white/60 leading-[150%]">
-                                        SBC Admin is a dashboard for managing
-                                        corporate communication. It provides
-                                        tools for overseeing servers, routing
-                                        groups, and logs, optimizing remote
-                                        teamwork and collaboration.
-                                    </p>
-                                </div>
-                                <div className="flex justify-between">
-                                    <div className="flex flex-col gap-1">
-                                        <p className="text-white/60">Links</p>
-                                        <a href="#">Notion</a>
-                                        <a href="#">Figma</a>
-                                    </div>
-                                    <div className="flex flex-col gap-1">
-                                        <p className="text-white/60">
-                                            Industry
-                                        </p>
-                                        <p>Corporate</p>
-                                    </div>
-                                    <div className="flex flex-col gap-1 text-right">
-                                        <p className="text-white/60">
-                                            Delieverables
-                                        </p>
-                                        <p>UX/UI design</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="flex flex-col gap-10" data-speed="1.2">
+                            <PortfolioCard
+                                imgpath="/project4.webp"
+                                logopath="/confero.svg"
+                                url="#"
+                                title="Confero"
+                                description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
+                            />
+                            <PortfolioCard
+                                imgpath="/project5.webp"
+                                logopath="/confero.svg"
+                                url="#"
+                                title="Confero"
+                                description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
+                            />
                         </div>
                     </div>
                 </section>
-
                 <section className="px-6 mt-[100px] flex flex-col gap-10">
                     <h2 className="text-[32px]">Services</h2>
 
@@ -436,6 +286,84 @@ export default function Page() {
                                     alt=""
                                 />
                             </div>
+                        </div>
+                    </div>
+                </section>
+                <section className="px-6 mt-[100px] flex flex-col gap-10 items-center">
+                    <h2 className="text-[32px]">Services</h2>
+                    <div className="grid grid-cols-3 text-white/60 gap-[1px]">
+                        <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600">
+                            <div className="flex flex-col gap-2">
+                                <h3 className="text-6xl flex items-start">
+                                    6<span className="text-2xl">+</span>
+                                </h3>
+                                <p>Years of Experience</p>
+                            </div>
+                            <p>
+                                I'm a Senior UX/UI Designer who simplifies
+                                complex systems. With over 6 years of experience
+                                across various platforms, I focus on clarity and
+                                real business impact.
+                            </p>
+                        </div>
+                        <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
+                        <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600">
+                            <div className="flex flex-col gap-2">
+                                <h3 className="text-6xl flex items-start">
+                                    500,000<span className="text-2xl">+</span>
+                                </h3>
+                                <p>Users</p>
+                            </div>
+                            <p>
+                                Scaled enterprise video-conferencing suite
+                                Redesigned key flows and improved UX for 650+
+                                clients. Boosted NPS by 15 points and eased
+                                support burden.
+                            </p>
+                        </div>
+                        <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
+                        <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600">
+                            <div className="flex flex-col gap-2">
+                                <h3 className="text-6xl flex items-start">
+                                    30%<span className="text-2xl">+</span>
+                                </h3>
+                                <p>Engagement</p>
+                            </div>
+                            <p>
+                                Launched mobile & Smart TV apps Expanded product
+                                reach in hybrid and in-room environments,
+                                increasing daily engagement by 30%.{" "}
+                            </p>
+                        </div>
+                        <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
+                        <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600">
+                            <div className="flex flex-col gap-2">
+                                <h3 className="text-6xl flex items-start">
+                                    $2M<span className="text-2xl">+</span>
+                                </h3>
+                                <p>Revenue</p>
+                            </div>
+                            <p>
+                                Built a single design system Simplified crypto
+                                purchase flow Optimized onboarding and flow —
+                                brought in 4,500+ new users and generated over
+                                $2M in the first year.
+                            </p>
+                        </div>
+                        <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
+                        <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600">
+                            <div className="flex flex-col gap-2">
+                                <h3 className="text-6xl flex items-start">
+                                    15<span className="text-2xl">+</span>
+                                </h3>
+                                <p>Apps Unified</p>
+                            </div>
+                            <p>
+                                Built a single design system Created a
+                                cross-platform design system for web, desktop,
+                                mobile & Smart TV — cut release time in half and
+                                improved handoff by 30%.{" "}
+                            </p>
                         </div>
                     </div>
                 </section>

@@ -86,3 +86,40 @@
     );
     transition-duration: 0.3s;
 }
+
+.button-link {
+    background: radial-gradient(
+        circle at 30% 30%,
+        #9265ff 0%,
+        #361984 40%,
+        #030712 80%
+    );
+    box-shadow: 0px 2px 2px 0px rgba(255, 255, 255, 0.3) inset;
+    transition-duration: 0.3s;
+    background-size: 110%;
+    transition-property: background-size;
+    outline: 1px solid rgba(255, 255, 255, 0.2);
+}
+.button-link:hover {
+    background-size: 200%;
+    transition-duration: 0.3s;
+}
+
+.text-animate {
+    animation: textmask 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+}
+
+@keyframes textmask {
+    from {
+        transform: translateY(4rem);
+        opacity: 0;
+    }
+    60% {
+        opacity: 1;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
