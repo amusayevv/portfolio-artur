@@ -1,3 +1,6 @@
+"use client";
+import { useEffect } from "react";
+
 import { Manrope } from "next/font/google";
 import Nav from "./_components/nav";
 import "./globals.css";

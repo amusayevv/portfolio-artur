@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+
 export default function Nav() {
     useEffect(() => {
         gsap.registerPlugin(ScrambleTextPlugin);
@@ -12,7 +13,7 @@ export default function Nav() {
                 scrambleText: {
                     text: "{original}",
                     chars: "upperAndLowerCase",
-                    revealDelay: 0.5,
+                    revealDelay: 1,
                 },
                 ease: "power1.inOut",
             });
@@ -24,7 +25,7 @@ export default function Nav() {
             <img src="/logo.svg" alt="" className="logo" />
             <ul className="w-[550px] flex text-white/80 text-center">
                 <li className="w-full bg-white/10 content-center rounded-[4px] hover:bg-white/10">
-                    <a href="#home">Home</a>
+                    <a href="/">Home</a>
                 </li>
                 <li className="w-full content-center rounded-[4px] hover:bg-white/10">
                     <a href="#projects">Projects</a>
@@ -33,15 +34,20 @@ export default function Nav() {
                     <a href="#">About</a>
                 </li>
                 <li className="w-full content-center rounded-[4px] hover:bg-white/10">
-                    <a href="#">Behance</a>
+                    <a href="https://www.behance.net/artury" target="_blank">
+                        Behance
+                    </a>
                 </li>
                 <li className="w-full content-center rounded-[4px] hover:bg-white/10">
-                    <a href="#">Resume</a>
+                    <a href="/resume-sample.pdf" download={true}>
+                        Resume
+                    </a>
                 </li>
             </ul>
             <a
                 className="btn-gradient content-center rounded-[4px] px-6 text-white/80"
-                href="#"
+                href="https://www.linkedin.com/in/artur-yurin/"
+                target="_blank"
             >
                 Get in touch
             </a>

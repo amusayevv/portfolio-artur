@@ -2,12 +2,14 @@
 import { useEffect } from "react";
 
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import _ScrollTrigger, { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import Cursor from "./_components/cursor";
 import PortfolioCard from "./_components/portfolioCard";
 import { LightningBoltIcon } from "@radix-ui/react-icons";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+import AboutCard from "./_components/aboutCard";
+import Footer from "./_components/footer";
 
 export default function Page() {
     useEffect(() => {
@@ -19,16 +21,34 @@ export default function Page() {
             normalizeScroll: true,
         });
 
-        gsap.registerPlugin(ScrambleTextPlugin);
-        gsap.to(".scrambleText", {
-            duration: 1.5,
-            scrambleText: {
-                text: "{original}",
-                chars: "upperAndLowerCase",
-                revealDelay: 0.5,
-            },
-            ease: "power1.inOut",
+        ScrollTrigger.create({
+            trigger: "#projects",
         });
+
+        const elements = document.querySelectorAll(".scrambleText");
+        const observer = new IntersectionObserver(
+            (entries, obs) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        gsap.to(entry.target, {
+                            duration: 1.5,
+                            scrambleText: {
+                                text: "{original}",
+                                chars: "upperAndLowerCase",
+                                revealDelay: 1,
+                            },
+                            ease: "power1.inOut",
+                        });
+                        obs.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
+
+        elements.forEach((el) => observer.observe(el));
+
+        return () => observer.disconnect();
     }, []);
 
     function handleUxUiMouseEnter() {
@@ -84,7 +104,7 @@ export default function Page() {
             <div id="smooth-content">
                 <section
                     id="home"
-                    className="h-dvh flex w-full px-6 items-center justify-around"
+                    className="h-dvh flex w-full px-40 items-center justify-start"
                     style={{
                         background:
                             "radial-gradient(100% 100% at 50% 0%, #000 0%, #000 46.63%, #090828 61.06%, #4622A8 83.29%, #C5B0F8 100%)",
@@ -133,11 +153,6 @@ export default function Page() {
                             </div>
                         </div>
                     </div>
-                    <img
-                        src="iPhone-16-Pro.png"
-                        alt="iPhone"
-                        className="w-[320px] h-auto object-contain mt-auto"
-                    />
                 </section>
                 <section
                     id="projects"
@@ -149,7 +164,7 @@ export default function Page() {
                             <PortfolioCard
                                 imgpath="/project1.webp"
                                 logopath="/insider.svg"
-                                url="#"
+                                url="/insider"
                                 title="Insider"
                                 description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
                             />
@@ -289,84 +304,67 @@ export default function Page() {
                         </div>
                     </div>
                 </section>
-                <section className="px-6 mt-[100px] flex flex-col gap-10 items-center">
-                    <h2 className="text-[32px]">Services</h2>
-                    <div className="grid grid-cols-3 text-white/60 gap-[1px]">
-                        <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600">
-                            <div className="flex flex-col gap-2">
-                                <h3 className="text-6xl flex items-start">
-                                    6<span className="text-2xl">+</span>
-                                </h3>
-                                <p>Years of Experience</p>
-                            </div>
-                            <p>
-                                I'm a Senior UX/UI Designer who simplifies
-                                complex systems. With over 6 years of experience
-                                across various platforms, I focus on clarity and
-                                real business impact.
-                            </p>
-                        </div>
-                        <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
-                        <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600">
-                            <div className="flex flex-col gap-2">
-                                <h3 className="text-6xl flex items-start">
-                                    500,000<span className="text-2xl">+</span>
-                                </h3>
-                                <p>Users</p>
-                            </div>
-                            <p>
-                                Scaled enterprise video-conferencing suite
-                                Redesigned key flows and improved UX for 650+
-                                clients. Boosted NPS by 15 points and eased
-                                support burden.
-                            </p>
-                        </div>
-                        <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
-                        <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600">
-                            <div className="flex flex-col gap-2">
-                                <h3 className="text-6xl flex items-start">
-                                    30%<span className="text-2xl">+</span>
-                                </h3>
-                                <p>Engagement</p>
-                            </div>
-                            <p>
-                                Launched mobile & Smart TV apps Expanded product
-                                reach in hybrid and in-room environments,
-                                increasing daily engagement by 30%.{" "}
-                            </p>
-                        </div>
-                        <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
-                        <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600">
-                            <div className="flex flex-col gap-2">
-                                <h3 className="text-6xl flex items-start">
-                                    $2M<span className="text-2xl">+</span>
-                                </h3>
-                                <p>Revenue</p>
-                            </div>
-                            <p>
-                                Built a single design system Simplified crypto
-                                purchase flow Optimized onboarding and flow —
-                                brought in 4,500+ new users and generated over
-                                $2M in the first year.
-                            </p>
-                        </div>
-                        <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
-                        <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600">
-                            <div className="flex flex-col gap-2">
-                                <h3 className="text-6xl flex items-start">
-                                    15<span className="text-2xl">+</span>
-                                </h3>
-                                <p>Apps Unified</p>
-                            </div>
-                            <p>
-                                Built a single design system Created a
-                                cross-platform design system for web, desktop,
-                                mobile & Smart TV — cut release time in half and
-                                improved handoff by 30%.{" "}
-                            </p>
+                <section
+                    id="services"
+                    className="px-6 mt-[100px] flex flex-col gap-10 items-center"
+                >
+                    <div className="flex flex-col gap-10 overflow-hidden relative p-0.5">
+                        <h2 className="text-[32px]">About me</h2>
+                        <div className="grid grid-cols-3 text-white/60 gap-[1px]">
+                            <AboutCard
+                                title="6+"
+                                subtitle="Years of Experience"
+                                description="                                    
+                                    I'm a Senior UX/UI Designer who simplifies
+                                    complex systems. With over 6 years of
+                                    experience across various platforms, I focus
+                                    on clarity and real business impact."
+                            />
+                            <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
+                            <AboutCard
+                                title="500,000+"
+                                subtitle="Users"
+                                description="                                                                        
+                                    Scaled enterprise video-conferencing suite
+                                    Redesigned key flows and improved UX for
+                                    650+ clients. Boosted NPS by 15 points and
+                                    eased support burden."
+                            />
+
+                            <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
+                            <AboutCard
+                                title="30%+"
+                                subtitle="Engagement"
+                                description="                                                                        
+                                    Launched mobile & Smart TV apps Expanded
+                                    product reach in hybrid and in-room
+                                    environments, increasing daily engagement by
+                                    30%."
+                            />
+                            <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
+                            <AboutCard
+                                title="$2M+"
+                                subtitle="Revenue"
+                                description="                                                                        
+                                    Built a single design system Simplified
+                                    crypto purchase flow Optimized onboarding
+                                    and flow — brought in 4,500+ new users and
+                                    generated over $2M in the first year."
+                            />
+                            <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
+                            <AboutCard
+                                title="15+"
+                                subtitle="Apps Unified"
+                                description="                                                                        
+                                    Built a single design system Created a
+                                    cross-platform design system for web,
+                                    desktop, mobile & Smart TV — cut release
+                                    time in half and improved handoff by 30%."
+                            />
                         </div>
                     </div>
                 </section>
+                <Footer />
             </div>
         </div>
     );
