@@ -1,0 +1,149 @@
+"use client";
+import { useEffect } from "react";
+import { gsap } from "gsap";
+
+export default function page() {
+    useEffect(() => {
+        let interBubble = document.querySelector(".interactive");
+        const xTo = gsap.quickTo(interBubble, "x", {
+            duration: 1,
+            ease: "power3",
+        });
+        const yTo = gsap.quickTo(interBubble, "y", {
+            duration: 1,
+            ease: "power3",
+        });
+        window.addEventListener("mousemove", (e) => {
+            xTo(e.clientX);
+            yTo(e.clientY);
+        });
+    }, []);
+
+    return (
+        <div className="flex flex-col gap-20">
+            <img
+                className="w-full h-dvh object-cover"
+                src="project2.webp"
+                alt="Laptop"
+            />
+            <section className="flex gap-4 px-6">
+                <div className="flex flex-col gap-10 flex-2/5">
+                    <div className="flex gap-4 items-center">
+                        <img src="confero.svg" alt="" />
+                        <h3 className="text-2xl font-medium">
+                            Confero Desktop
+                        </h3>
+                    </div>
+                    <div className="flex gap-4 flex-wrap">
+                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
+                            UI/UX Research
+                        </p>
+                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
+                            Design System
+                        </p>
+                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
+                            WEB Design
+                        </p>
+                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
+                            Branding
+                        </p>
+                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
+                            Corporate
+                        </p>
+                    </div>
+                    <a
+                        href="https://www.linkedin.com/in/artur-yurin/"
+                        target="_blank"
+                        className="btn-gradient content-center rounded-[4px] px-6 text-white/80 text-center h-10 w-fit"
+                    >
+                        Get in touch
+                    </a>
+                </div>
+                <div className="flex flex-col gap-10 flex-3/5">
+                    <div className="flex flex-col gap-4">
+                        <p className="text-white/60">Problem</p>
+                        <p className="text-white/90">
+                            In today's fast-paced corporate environment, teams
+                            often encounter difficulties in maintaining
+                            effective communication and collaboration,
+                            especially in remote settings. Employees may find it
+                            hard to connect through traditional methods, leading
+                            to misunderstandings and decreased productivity.
+                            Many existing tools lack the integration needed for
+                            seamless teamwork, resulting in frustration and
+                            inefficiency.
+                        </p>
+                    </div>
+                    <div className="flex flex-col gap-4">
+                        <p className="text-white/60">Solition</p>
+                        <p className="text-white/90">
+                            Confero revolutionizes corporate communication with
+                            its all-in-one platform designed for video calls,
+                            messaging, and collaborative tools. The interface is
+                            sleek and modern, featuring a clean layout that
+                            enhances user experience. With customizable channels
+                            and real-time updates, Confero ensures that teams
+                            can communicate effortlessly, share ideas, and work
+                            together effectively, no matter where they are. This
+                            innovative approach fosters a culture of
+                            collaboration and keeps teams engaged and
+                            productive.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section className="px-6">
+                <img
+                    src="confero-desktop-2.jpg"
+                    alt="app UI"
+                    loading="lazy"
+                    className="rounded-3xl w-full object-cover"
+                />
+                <video
+                    src="confero-desktop/event-create.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full rounded-3xl"
+                ></video>
+                <img
+                    src="confero-desktop-3.jpg"
+                    alt="app UI"
+                    loading="lazy"
+                    className="rounded-3xl w-full object-cover"
+                />
+            </section>
+            <div className="gradient-bg">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="goo">
+                            <feGaussianBlur
+                                in="SourceGraphic"
+                                stdDeviation="10"
+                                result="blur"
+                            />
+                            <feColorMatrix
+                                in="blur"
+                                mode="matrix"
+                                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+                                result="goo"
+                            />
+                            <feBlend in="SourceGraphic" in2="goo" />
+                        </filter>
+                    </defs>
+                </svg>
+
+                <div className="gradients-container">
+                    <div className="g1"></div>
+                    <div className="g2"></div>
+                    <div className="g3"></div>
+                    <div className="g4"></div>
+                    <div className="g5"></div>
+                    <div className="interactive"></div>
+                </div>
+            </div>
+        </div>
+    );
+}

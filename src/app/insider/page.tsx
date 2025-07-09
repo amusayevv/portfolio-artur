@@ -1,3 +1,5 @@
+import Footer from "../_components/footer";
+
 export default function Page() {
     return (
         <div className="flex flex-col gap-20">
@@ -123,6 +125,8 @@ export default function Page() {
                     alt="blue"
                 />
             </section>
+
+            <Footer />
         </div>
     );
 }

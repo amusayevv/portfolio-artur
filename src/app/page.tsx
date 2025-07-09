@@ -171,7 +171,7 @@ export default function Page() {
                             <PortfolioCard
                                 imgpath="/project2.webp"
                                 logopath="/confero.svg"
-                                url="#"
+                                url="confero-desktop"
                                 title="Confero"
                                 description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
                             />
