@@ -13,6 +13,20 @@ import Footer from "./_components/footer";
 
 export default function Page() {
     useEffect(() => {
+        let interBubble = document.querySelector(".interactive");
+        const xTo = gsap.quickTo(interBubble, "x", {
+            duration: 1,
+            ease: "power3",
+        });
+        const yTo = gsap.quickTo(interBubble, "y", {
+            duration: 1,
+            ease: "power3",
+        });
+        window.addEventListener("mousemove", (e) => {
+            xTo(e.clientX);
+            yTo(e.clientY);
+        });
+
         gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
         ScrollSmoother.create({
@@ -74,9 +88,7 @@ export default function Page() {
         document.querySelector("#system1")?.classList.remove("active");
         document.querySelector("#system2")?.classList.remove("active");
         document.querySelector("#system3")?.classList.remove("active");
-    }
 
-    useEffect(() => {
         document
             .querySelector("#uxui-block")
             ?.addEventListener("mouseenter", handleUxUiMouseEnter);
@@ -95,7 +107,7 @@ export default function Page() {
         document
             .querySelector("#system")
             ?.addEventListener("mouseleave", handleSystemMouseLeave);
-    }, []);
+    }
 
     return (
         <div id="smooth-wrapper">
@@ -105,11 +117,41 @@ export default function Page() {
                 <section
                     id="home"
                     className="h-dvh flex w-full px-40 items-center justify-start"
-                    style={{
-                        background:
-                            "radial-gradient(100% 100% at 50% 0%, #000 0%, #000 46.63%, #090828 61.06%, #4622A8 83.29%, #C5B0F8 100%)",
-                    }}
+                    // style={{
+                    //     background:
+                    //         "radial-gradient(100% 100% at 50% 0%, #000 0%, #000 46.63%, #090828 61.06%, #4622A8 83.29%, #C5B0F8 100%)",
+                    // }}
                 >
+                    <div className="gradient-bg">
+                        <svg xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <filter id="goo">
+                                    <feGaussianBlur
+                                        in="SourceGraphic"
+                                        stdDeviation="10"
+                                        result="blur"
+                                    />
+                                    <feColorMatrix
+                                        in="blur"
+                                        mode="matrix"
+                                        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+                                        result="goo"
+                                    />
+                                    <feBlend in="SourceGraphic" in2="goo" />
+                                </filter>
+                            </defs>
+                        </svg>
+
+                        <div className="gradients-container">
+                            <div className="g2"></div>
+                            <div className="g3"></div>
+                            <div className="g4"></div>
+                            <div className="g1"></div>
+
+                            <div className="interactive"></div>
+                        </div>
+                    </div>
+
                     <div className="flex flex-col items-start gap-6">
                         <div className="flex inset-shadow-2xs inset-shadow-gray-600 rounded-full bg-white/10 text-white items-center gap-3 px-4 py-2">
                             <div className="w-[10px] h-[10px] bg-green-400 rounded-full"></div>

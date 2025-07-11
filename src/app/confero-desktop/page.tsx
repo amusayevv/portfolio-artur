@@ -3,22 +3,6 @@ import { useEffect } from "react";
 import { gsap } from "gsap";
 
 export default function page() {
-    useEffect(() => {
-        let interBubble = document.querySelector(".interactive");
-        const xTo = gsap.quickTo(interBubble, "x", {
-            duration: 1,
-            ease: "power3",
-        });
-        const yTo = gsap.quickTo(interBubble, "y", {
-            duration: 1,
-            ease: "power3",
-        });
-        window.addEventListener("mousemove", (e) => {
-            xTo(e.clientX);
-            yTo(e.clientY);
-        });
-    }, []);
-
     return (
         <div className="flex flex-col gap-20">
             <img
@@ -115,35 +99,6 @@ export default function page() {
                     className="rounded-3xl w-full object-cover"
                 />
             </section>
-            <div className="gradient-bg">
-                <svg xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <filter id="goo">
-                            <feGaussianBlur
-                                in="SourceGraphic"
-                                stdDeviation="10"
-                                result="blur"
-                            />
-                            <feColorMatrix
-                                in="blur"
-                                mode="matrix"
-                                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
-                                result="goo"
-                            />
-                            <feBlend in="SourceGraphic" in2="goo" />
-                        </filter>
-                    </defs>
-                </svg>
-
-                <div className="gradients-container">
-                    <div className="g1"></div>
-                    <div className="g2"></div>
-                    <div className="g3"></div>
-                    <div className="g4"></div>
-                    <div className="g5"></div>
-                    <div className="interactive"></div>
-                </div>
-            </div>
         </div>
     );
 }
