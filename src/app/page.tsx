@@ -88,7 +88,9 @@ export default function Page() {
         document.querySelector("#system1")?.classList.remove("active");
         document.querySelector("#system2")?.classList.remove("active");
         document.querySelector("#system3")?.classList.remove("active");
+    }
 
+    useEffect(() => {
         document
             .querySelector("#uxui-block")
             ?.addEventListener("mouseenter", handleUxUiMouseEnter);
@@ -107,7 +109,7 @@ export default function Page() {
         document
             .querySelector("#system")
             ?.addEventListener("mouseleave", handleSystemMouseLeave);
-    }
+    }, []);
 
     return (
         <div id="smooth-wrapper">
