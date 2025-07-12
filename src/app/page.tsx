@@ -29,15 +29,17 @@ export default function Page() {
 
         gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-        ScrollSmoother.create({
-            smooth: 1,
-            effects: true,
-            normalizeScroll: true,
-        });
+        if (!ScrollTrigger.isTouch) {
+            ScrollSmoother.create({
+                smooth: 1,
+                effects: true,
+                normalizeScroll: false,
+            });
 
-        ScrollTrigger.create({
-            trigger: "#projects",
-        });
+            ScrollTrigger.create({
+                trigger: "#projects",
+            });
+        }
 
         if (window.innerWidth >= 720) {
             const elements = document.querySelectorAll(".scrambleText");
@@ -260,7 +262,7 @@ export default function Page() {
                             </div>
                             <div
                                 id="uxui"
-                                className="lg:w-[750px] lg:h-[533px] max-w-[500px] lg:rounded-3xl rounded-2xl overflow-hidden border-white/4 border-4 flex-shrink-0 flex items-center justify-center lg:m-0 mx-auto gap-10"
+                                className="w-[500px] lg:w-[750px] lg:h-[533px] lg:rounded-3xl rounded-2xl overflow-hidden border-white/4 border-4 flex-shrink-0 flex items-center justify-center lg:m-0 mx-auto gap-10"
                             >
                                 <img
                                     src="/services.png"
