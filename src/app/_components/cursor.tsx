@@ -35,7 +35,7 @@ export default function Cursor({ text }: { text: string }) {
     return (
         <div
             id="cursor"
-            className="bg-white/10 backdrop-blur-md p-3 rounded-[8px] fixed select-none text-white/80 font-semibold z-[100] text-xs transition-opacity duration-200 pointer-events-none"
+            className="bg-white/10 backdrop-blur-md p-3 rounded-[8px] fixed select-none text-white/80 font-semibold z-[100] text-xs transition-opacity duration-200 pointer-events-none hidden lg:block"
             style={{ opacity: isProjectHover ? 1 : 0 }}
         >
             {text}

@@ -8,7 +8,7 @@ export default function AboutCard({
     description: string;
 }) {
     return (
-        <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600">
+        <div className="hover:text-white p-10 max-w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600">
             <div className="flex flex-col gap-2">
                 <h3 className="scrambleText text-6xl flex items-start">
                     {title}

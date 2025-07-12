@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { gsap } from "gsap";
 import _ScrollTrigger, { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -39,30 +39,32 @@ export default function Page() {
             trigger: "#projects",
         });
 
-        const elements = document.querySelectorAll(".scrambleText");
-        const observer = new IntersectionObserver(
-            (entries, obs) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        gsap.to(entry.target, {
-                            duration: 1.5,
-                            scrambleText: {
-                                text: "{original}",
-                                chars: "upperAndLowerCase",
-                                revealDelay: 1,
-                            },
-                            ease: "power1.inOut",
-                        });
-                        obs.unobserve(entry.target);
-                    }
-                });
-            },
-            { threshold: 0.5 }
-        );
+        if (window.innerWidth >= 720) {
+            const elements = document.querySelectorAll(".scrambleText");
 
-        elements.forEach((el) => observer.observe(el));
+            const observer = new IntersectionObserver(
+                (entries, obs) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            gsap.to(entry.target, {
+                                duration: 1.5,
+                                scrambleText: {
+                                    text: "{original}",
+                                    chars: "upperAndLowerCase",
+                                    revealDelay: 1,
+                                },
+                                ease: "power1.inOut",
+                            });
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.5 }
+            );
+            elements.forEach((el) => observer.observe(el));
 
-        return () => observer.disconnect();
+            return () => observer.disconnect();
+        }
     }, []);
 
     function handleUxUiMouseEnter() {
@@ -118,13 +120,13 @@ export default function Page() {
             <div id="smooth-content">
                 <section
                     id="home"
-                    className="h-dvh flex w-full px-40 items-center justify-start"
+                    className="h-dvh flex w-full lg:px-40 px-6 items-center justify-start"
                     // style={{
                     //     background:
                     //         "radial-gradient(100% 100% at 50% 0%, #000 0%, #000 46.63%, #090828 61.06%, #4622A8 83.29%, #C5B0F8 100%)",
                     // }}
                 >
-                    <div className="gradient-bg">
+                    <div className="gradient-bg z-0">
                         <svg xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <filter id="goo">
@@ -150,16 +152,16 @@ export default function Page() {
                             <div className="g4"></div>
                             <div className="g1"></div>
 
-                            <div className="interactive"></div>
+                            <div className="interactive hidden lg:block"></div>
                         </div>
                     </div>
 
-                    <div className="flex flex-col items-start gap-6">
+                    <div className="flex flex-col items-start gap-6 z-10">
                         <div className="flex inset-shadow-2xs inset-shadow-gray-600 rounded-full bg-white/10 text-white items-center gap-3 px-4 py-2">
                             <div className="w-[10px] h-[10px] bg-green-400 rounded-full"></div>
                             <p>Available to work</p>
                         </div>
-                        <h1 className="text-[4rem] leading-[120%] font-semibold max-w-[1000px] text-white">
+                        <h1 className="lg:text-[4rem] text-[2rem] leading-[120%] font-semibold lg:max-w-[1000px] text-white">
                             <div className="overflow-hidden py-1">
                                 <p className="text-animate">Making Complex</p>
                             </div>
@@ -171,7 +173,7 @@ export default function Page() {
                         </h1>
                         <div className="flex gap-10 flex-col">
                             <div className="overflow-hidden">
-                                <p className="text-animate whitespace-nowrap flex gap-5 text-2xl content-center items-center">
+                                <p className="text-animate lg:whitespace-nowrap sm:flex gap-5 lg:text-2xl text-[16px] content-center items-center">
                                     UX • UI • Product • Design Systems
                                     <span className="flex gap-1 items-center">
                                         <LightningBoltIcon className="w-6 h-6" />
@@ -187,13 +189,6 @@ export default function Page() {
                                 >
                                     Get in touch
                                 </a>
-                                <a
-                                    href="https://www.linkedin.com/in/artur-yurin/"
-                                    className="px-8 py-3 rounded-[0.5rem] font-semibold hover:text-white/60"
-                                    target="_blank"
-                                >
-                                    Explore projects
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -203,7 +198,7 @@ export default function Page() {
                     className="mt-[100px] px-6 flex flex-col gap-10"
                 >
                     <h2 className="text-[32px]">Projects</h2>
-                    <div className="grid grid-cols-2 gap-10">
+                    <div className="grid lg:grid-cols-2 grid-cols-1 gap-10">
                         <div className="flex flex-col gap-10" data-speed="1.4">
                             <PortfolioCard
                                 imgpath="/project1.webp"
@@ -248,13 +243,13 @@ export default function Page() {
                 <section className="px-6 mt-[100px] flex flex-col gap-10">
                     <h2 className="text-[32px]">Services</h2>
 
-                    <div className="grid grid-cols-2 flex-col gap-6">
+                    <div className="grid lg:grid-cols-2 grid-cols-1 flex-col gap-6">
                         <div
                             id="uxui-block"
-                            className="w-full h-[316px] col-span-2 overflow-hidden border border-white/25 flex justify-between bg-[linear-gradient(272deg,_rgba(255,255,255,0.04)_0.51%,_rgba(255,255,255,0.04)_55.34%,_rgba(255,255,255,0.10)_74.69%,_rgba(255,255,255,0.04)_94.73%)] p-10 rounded-3xl relative"
+                            className="w-full lg:h-[316px] h-[500px] lg:col-span-2 gap-4 overflow-hidden border border-white/25 flex lg:flex-row flex-col justify-between bg-[linear-gradient(272deg,_rgba(255,255,255,0.04)_0.51%,_rgba(255,255,255,0.04)_55.34%,_rgba(255,255,255,0.10)_74.69%,_rgba(255,255,255,0.04)_94.73%)] p-10 rounded-3xl relative"
                         >
                             <div className="flex flex-col gap-2 max-w-[500px]">
-                                <h3 className="text-[40px] font-medium">
+                                <h3 className="lg:text-[40px] text-[24px] font-medium">
                                     UX/UI design
                                 </h3>
                                 <p className="text-white/60 leading-[150%]">
@@ -265,7 +260,7 @@ export default function Page() {
                             </div>
                             <div
                                 id="uxui"
-                                className="w-[750px] h-[533px] rounded-3xl overflow-hidden border-white/4 border-4 flex-shrink-0 flex items-center justify-center"
+                                className="lg:w-[750px] lg:h-[533px] max-w-[500px] lg:rounded-3xl rounded-2xl overflow-hidden border-white/4 border-4 flex-shrink-0 flex items-center justify-center lg:m-0 mx-auto gap-10"
                             >
                                 <img
                                     src="/services.png"
@@ -279,7 +274,7 @@ export default function Page() {
                             className="w-full h-[500px] overflow-hidden border border-white/25 flex flex-col justify-between bg-[linear-gradient(272deg,_rgba(255,255,255,0.04)_0.51%,_rgba(255,255,255,0.04)_55.34%,_rgba(255,255,255,0.10)_74.69%,_rgba(255,255,255,0.04)_94.73%)] p-10 rounded-3xl relative"
                         >
                             <div className="flex flex-col gap-2 w-full">
-                                <h3 className="text-[40px] font-medium">
+                                <h3 className="lg:text-[40px] text-[24px] font-medium">
                                     Web Design
                                 </h3>
                                 <p className="text-white/60 leading-[150%]">
@@ -293,13 +288,13 @@ export default function Page() {
                             <div>
                                 <img
                                     id="web1"
-                                    className="w-[320px] h-[268px] bottom-[-40px] absolute pointer-events-none"
+                                    className="w-[320px] h-[268px] lg:bottom-[-40px] lg:absolute pointer-events-none lg:m-0 mx-auto"
                                     src="call.png"
                                     alt=""
                                 />
                                 <div
                                     id="web2"
-                                    className="w-[550px] rounded-3xl pointer-events-none overflow-hidden border-white/4 border-4 flex-shrink-0 flex items-center justify-center absolute bottom-[-60px] right-[-120px] rotate-2"
+                                    className="w-[550px] hidden rounded-3xl pointer-events-none overflow-hidden border-white/4 border-4 flex-shrink-0 lg:flex items-center justify-center absolute bottom-[-60px] right-[-120px] rotate-2"
                                 >
                                     <img
                                         src="/insider.png"
@@ -314,7 +309,7 @@ export default function Page() {
                             className="w-full h-[500px] overflow-hidden border border-white/25 flex flex-col justify-between bg-[linear-gradient(272deg,_rgba(255,255,255,0.04)_0.51%,_rgba(255,255,255,0.04)_55.34%,_rgba(255,255,255,0.10)_74.69%,_rgba(255,255,255,0.04)_94.73%)] p-10 rounded-3xl relative"
                         >
                             <div className="flex flex-col gap-2 w-full">
-                                <h3 className="text-[40px] font-medium">
+                                <h3 className="lg:text-[40px] text-[24px] font-medium">
                                     Design System Implementation{" "}
                                 </h3>
                                 <p className="text-white/60 leading-[150%]">
@@ -328,19 +323,19 @@ export default function Page() {
                             <div>
                                 <img
                                     id="system3"
-                                    className="absolute w-[320px] bottom-[140px] left-[340px]"
+                                    className="absolute lg:w-[320px] w-[260px] lg:bottom-[140px] bottom-[160px] lg:left-[340px] lg:-translate-0 left-1/2 -translate-x-1/4"
                                     src="image 41.png"
                                     alt=""
                                 />
                                 <img
                                     id="system2"
-                                    className="absolute w-[420px] bottom-[60px] left-[180px]"
+                                    className="absolute lg:w-[420px] w-[280px] lg:bottom-[60px] bottom-[100px] lg:left-[180px] lg:-translate-0 left-1/2 -translate-x-1/2"
                                     src="image 42.png"
                                     alt=""
                                 />
                                 <img
                                     id="system1"
-                                    className="absolute w-[500px] bottom-[-140px] left-[80px]"
+                                    className="absolute lg:w-[500px] w-[350px] lg:bottom-[-140px] bottom-[-60px] lg:left-[80px] lg:-translate-0 left-1/2 -translate-x-3/5"
                                     src="image 43.png"
                                     alt=""
                                 />
@@ -350,11 +345,11 @@ export default function Page() {
                 </section>
                 <section
                     id="services"
-                    className="px-6 mt-[100px] flex flex-col gap-10 items-center"
+                    className="px-6 mt-[100px] flex flex-col gap-10 items-center content-center"
                 >
                     <div className="flex flex-col gap-10 overflow-hidden relative p-0.5">
                         <h2 className="text-[32px]">About me</h2>
-                        <div className="grid grid-cols-3 text-white/60 gap-[1px]">
+                        <div className="grid xl:grid-cols-3 md:grid-cols-2 gird-cols-1` text-white/60 gap-[1px]">
                             <AboutCard
                                 title="6+"
                                 subtitle="Years of Experience"
@@ -364,7 +359,7 @@ export default function Page() {
                                     experience across various platforms, I focus
                                     on clarity and real business impact."
                             />
-                            <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
+                            <div className="xl:block hidden hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
                             <AboutCard
                                 title="500,000+"
                                 subtitle="Users"
@@ -375,7 +370,7 @@ export default function Page() {
                                     eased support burden."
                             />
 
-                            <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
+                            <div className="hover:text-white xl:block hidden p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
                             <AboutCard
                                 title="30%+"
                                 subtitle="Engagement"
@@ -385,7 +380,7 @@ export default function Page() {
                                     environments, increasing daily engagement by
                                     30%."
                             />
-                            <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
+                            <div className="hover:text-white xl:block hidden p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
                             <AboutCard
                                 title="$2M+"
                                 subtitle="Revenue"
@@ -395,7 +390,7 @@ export default function Page() {
                                     and flow — brought in 4,500+ new users and
                                     generated over $2M in the first year."
                             />
-                            <div className="hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
+                            <div className="hover:text-white xl:block hidden p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
                             <AboutCard
                                 title="15+"
                                 subtitle="Apps Unified"

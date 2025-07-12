@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
         <footer
-            className="flex w-full justify-around mt-40 pb-100"
+            className="flex lg:flex-row flex-col w-full lg:justify-around justify-center gap-8 mt-40 pb-100 lg:px-0 px-6 lg:text-left text-center"
             style={{
                 background:
                     "radial-gradient(200% 100% at 50% 100%, #C5B0F8 0%, #4622A8 16%, #090828 40%, #030712 60%, #030712 100%), #030712;",
@@ -14,7 +14,7 @@ export default function Footer() {
                 <a
                     href="https://www.linkedin.com/in/artur-yurin/"
                     target="_blank"
-                    className="btn-gradient content-center rounded-[4px] px-6 text-white/80 text-center h-12 w-[80%]"
+                    className="btn-gradient content-center rounded-[4px] px-6 text-white/80 text-center h-12 lg:w-[80%] w-full"
                 >
                     Get in touch
                 </a>
@@ -23,7 +23,7 @@ export default function Footer() {
                 <div>
                     <a href="#">arturyurin@gmail.com</a>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4  justify-center">
                     <a href="https://www.behance.net/artury" target="_blank">
                         <svg
                             width="24"
@@ -86,7 +86,7 @@ export default function Footer() {
                     </a>
                 </div>
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col lg:gap-4 gap-6">
                 <p className="text-white/60">Portfolio</p>
                 <a className="hover:text-white/60" href="#">
                     Insider

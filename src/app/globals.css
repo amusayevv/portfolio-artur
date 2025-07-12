@@ -127,7 +127,7 @@
 :root {
     --color-bg1: rgb(108, 0, 162);
     --color-bg2: rgb(0, 17, 82);
-    --color1: 18, 113, 255;
+    --color1: 54, 25, 132;
     --color2: 221, 74, 255;
     --color-interactive: 140, 100, 255;
     --circle-size: 80%;
@@ -236,8 +236,8 @@
     position: absolute;
     background: radial-gradient(
             circle at center,
-            rgba(var(--color2), 0.8) 0,
-            rgba(var(--color2), 0) 50%
+            rgba(var(--color-interactive), 0.8) 0,
+            rgba(var(--color-interactive), 0) 50%
         )
         no-repeat;
     mix-blend-mode: var(--blending);
@@ -257,8 +257,8 @@
     position: absolute;
     background: radial-gradient(
             circle at center,
-            rgba(var(--color1), 0.8) 0,
-            rgba(var(--color1), 0) 50%
+            rgba(var(--color2), 0.8) 0,
+            rgba(var(--color2), 0) 50%
         )
         no-repeat;
     mix-blend-mode: var(--blending);
@@ -290,4 +290,33 @@
     left: -50%;
 
     opacity: 0.7;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100% !important;
+    min-width: 100vw;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+#smooth-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+#smooth-content {
+    width: 100%;
+}
+
+@media (max-width: 1000px) {
+    .bg-zoom-transition::before {
+        display: none;
+    }
 }
