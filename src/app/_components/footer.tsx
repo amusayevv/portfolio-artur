@@ -7,7 +7,7 @@ export default function Footer() {
                     "radial-gradient(200% 100% at 50% 100%, #C5B0F8 0%, #4622A8 16%, #090828 40%, #030712 60%, #030712 100%), #030712;",
             }}
         >
-            <div className="max-w-[480px] text-white/60 flex flex-col gap-10">
+            <div className="lg:max-w-[480px] w-full text-white/60 flex flex-col gap-10">
                 <h3 className="text-2xl font-semibold">
                     Ready to design something exceptional? Let’s connect.
                 </h3>

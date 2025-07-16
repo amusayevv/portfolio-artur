@@ -80,7 +80,12 @@ export default function Nav() {
     return (
         <nav className="flex justify-between box-border mt-4  bg-white/10 p-2 lg:h-[48px] h-[64px] overflow-hidden inset-shadow-2xs inset-shadow-gray-600 lg:w-[900px] w-[calc(100vw-48px)]  rounded-[8px] backdrop-blur-sm fixed left-1/2 -translate-x-1/2 z-50 items-center">
             <div className="pc-menu lg:flex hidden h-full w-full justify-between">
-                <img src="/logo.svg" alt="" className="logo pl-4" />
+                <a
+                    href="/"
+                    className="w-[100px] flex justify-center items-center"
+                >
+                    <img src="/logo.svg" alt="" className="logo pl-4" />
+                </a>
                 <ul className="w-[550px] flex text-white/80 text-center">
                     <li className="w-full bg-white/10 content-center rounded-[4px] hover:bg-white/10">
                         <a href="/" className="scramble">

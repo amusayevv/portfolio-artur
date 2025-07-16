@@ -9,10 +9,10 @@ export default function Page() {
                 alt="Laptop"
             />
 
-            <section className="flex gap-4 px-6">
+            <section className="flex lg:flex-row flex-col lg:gap-4 gap-12 px-6">
                 <div className="flex flex-col gap-10 flex-2/5">
                     <div className="flex gap-4 items-center">
-                        <img src="insider.svg" alt="" />
+                        <img src="insider.svg" alt="star logo" />
                         <h3 className="text-2xl font-medium">Insider</h3>
                     </div>
                     <div className="flex gap-4 flex-wrap">
@@ -78,27 +78,38 @@ export default function Page() {
             </section>
 
             <section className="flex flex-col gap-10 px-6">
-                <div className="relative w-full h-dvh overflow-hidden flex items-end rounded-3xl">
-                    <img
-                        className="w-full h-full object-cover"
-                        src="screeeeen.jpg"
-                        alt="blue"
-                    />
-                </div>
-                <div className="flex w-full gap-4">
-                    <img
-                        className="flex-1 w-0 h-dvh rounded-3xl object-cover"
-                        src="Frame 1618868892.jpg"
-                        alt="UI elements"
-                    />
-                    <img
-                        className="flex-1 w-0 h-dvh rounded-3xl object-cover"
-                        src="Rectangle 2096.jpg"
-                        alt="2 phones"
-                    />
-                </div>
                 <img
-                    className="w-full h-dvh object-cover object-bottom-left rounded-3xl"
+                    className="w-full h-full object-contain rounded-3xl"
+                    src="screeeeen.jpg"
+                    alt="blue"
+                />
+                <div className="flex flex-row w-full gap-4 aspect-[9/5]">
+                    <div className="flex-1 aspect-[4/5]">
+                        <img
+                            className="w-full h-full object-cover rounded-3xl"
+                            src="Frame 1618868892.jpg"
+                            alt="UI elements"
+                        />
+                    </div>
+                    <div className="flex-1 aspect-[4/5]">
+                        <img
+                            className="w-full h-full object-cover rounded-3xl"
+                            src="Rectangle 2096.jpg"
+                            alt="2 phones"
+                        />
+                    </div>
+                </div>
+                <video
+                    src="insider-videos/horizontal-video-1 4k.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full rounded-3xl"
+                ></video>
+
+                <img
+                    className="w-full h-full object-contain object-bottom-left rounded-3xl"
                     src="insider-1.jpg"
                     alt="blue"
                 />
@@ -115,15 +126,33 @@ export default function Page() {
                     />
                 </div>
                 <img
-                    className="w-full h-dvh object-cover object-bottom-left rounded-3xl"
+                    className="w-full h-full object-contain object-bottom-left rounded-3xl"
                     src="Frame 1618868895.jpg"
                     alt="blue"
                 />
                 <img
-                    className="w-full object-cover object-bottom-left rounded-3xl"
+                    className="w-full h-full object-contain object-bottom-left rounded-3xl"
                     src="Frame 1618868899.webp"
                     alt="blue"
                 />
+                <img
+                    className="w-full h-full object-contain object-bottom-left rounded-3xl"
+                    src="mobile-insider.jpg"
+                    alt="blue"
+                />
+                <img
+                    className="w-full h-full object-contain object-bottom-left rounded-3xl"
+                    src="mobile-insider-22.jpg"
+                    alt="blue"
+                />
+                <video
+                    src="insider-videos/horizontal-video-2 4k.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full rounded-3xl"
+                ></video>
             </section>
 
             <Footer />

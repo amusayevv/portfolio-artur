@@ -8,9 +8,9 @@ export default function AboutCard({
     description: string;
 }) {
     return (
-        <div className="hover:text-white p-10 max-w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600">
+        <div className="hover:text-white p-10 max-w-[400px] aspect-square flex flex-col justify-between outline-1 outline-gray-600">
             <div className="flex flex-col gap-2">
-                <h3 className="scrambleText text-6xl flex items-start">
+                <h3 className="scrambleText lg:text-6xl text-4xl flex items-start">
                     {title}
                 </h3>
                 <p>{subtitle}</p>

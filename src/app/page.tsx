@@ -290,7 +290,7 @@ export default function Page() {
                             <div>
                                 <img
                                     id="web1"
-                                    className="w-[320px] h-[268px] lg:bottom-[-40px] lg:absolute pointer-events-none lg:m-0 mx-auto"
+                                    className="lg:w-[320px] lg:h-[268px] lg:bottom-[-40px] lg:absolute pointer-events-none lg:m-0 mx-auto"
                                     src="call.png"
                                     alt=""
                                 />
@@ -361,7 +361,7 @@ export default function Page() {
                                     experience across various platforms, I focus
                                     on clarity and real business impact."
                             />
-                            <div className="xl:block hidden hover:text-white p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
+                            <div className="xl:flex hidden hover:text-white p-10 w-[400px] h-[400px] flex-col justify-between outline-1 outline-gray-600"></div>
                             <AboutCard
                                 title="500,000+"
                                 subtitle="Users"
@@ -372,7 +372,7 @@ export default function Page() {
                                     eased support burden."
                             />
 
-                            <div className="hover:text-white xl:block hidden p-10 w-[400px] h-[400px] flex flex-col justify-between outline-1 outline-gray-600"></div>
+                            <div className="hover:text-white xl:flex hidden p-10 w-[400px] h-[400px] flex-col justify-between outline-1 outline-gray-600"></div>
                             <AboutCard
                                 title="30%+"
                                 subtitle="Engagement"
