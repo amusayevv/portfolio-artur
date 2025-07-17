@@ -86,19 +86,22 @@ export default function Nav() {
                 >
                     <img src="/logo.svg" alt="" className="logo pl-4" />
                 </a>
-                <ul className="w-[550px] flex text-white/80 text-center">
+                <ul className="w-[550px] flex text-white text-center">
                     <li className="w-full bg-white/10 content-center rounded-[4px] hover:bg-white/10">
-                        <a href="/" className="scramble">
+                        <a href="/" className="scramble mix-blend-difference">
                             Home
                         </a>
                     </li>
                     <li className="w-full content-center rounded-[4px] hover:bg-white/10">
-                        <a href="#projects" className="scramble">
+                        <a
+                            href="#projects"
+                            className="scramble mix-blend-difference"
+                        >
                             Projects
                         </a>
                     </li>
                     <li className="w-full content-center rounded-[4px] hover:bg-white/10">
-                        <a href="#" className="scramble">
+                        <a href="#" className="scramble mix-blend-difference">
                             About
                         </a>
                     </li>
@@ -106,15 +109,15 @@ export default function Nav() {
                         <a
                             href="https://www.behance.net/artury"
                             target="_blank"
-                            className="scramble"
+                            className="scramble mix-blend-difference"
                         >
                             Behance
                         </a>
                     </li>
                     <li className="w-full content-center rounded-[4px] hover:bg-white/10">
                         <a
-                            href="/resume-sample.pdf"
-                            className="scramble"
+                            href="/resume.pdf"
+                            className="scramble mix-blend-difference"
                             download={true}
                         >
                             Resume
@@ -122,7 +125,7 @@ export default function Nav() {
                     </li>
                 </ul>
                 <a
-                    className="btn-gradient content-center rounded-[4px] px-6 text-white/80"
+                    className="btn-gradient content-center rounded-[4px] px-6 text-white mix-blend-difference"
                     href="https://www.linkedin.com/in/artur-yurin/"
                     target="_blank"
                 >
