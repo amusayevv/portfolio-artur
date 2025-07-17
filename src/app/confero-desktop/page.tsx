@@ -92,11 +92,11 @@ export default function page() {
                     className="w-full rounded-3xl"
                 >
                     <source
-                        src="confero-desktop/event-create.webm"
+                        src="confero-desktop/active-event (1080p).webm"
                         type="video/webm"
                     />
                     <source
-                        src="confero-desktop/event-create.mp4"
+                        src="confero-desktop/active-event.mp4"
                         type="video/mp4"
                     />
                 </video>
@@ -128,11 +128,11 @@ export default function page() {
                     className="w-full rounded-3xl"
                 >
                     <source
-                        src="confero-desktop/Contact-bg.webm"
+                        src="confero-desktop/contacts (1080p).webm"
                         type="video/webm"
                     />
                     <source
-                        src="confero-desktop/Contact-bg.mp4"
+                        src="confero-desktop/contacts.mp4"
                         type="video/mp4"
                     />
                 </video>
@@ -148,6 +148,19 @@ export default function page() {
                     loading="lazy"
                     className="rounded-3xl w-full object-cover"
                 />
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full rounded-3xl"
+                >
+                    <source
+                        src="confero-desktop/events (1080p).webm"
+                        type="video/webm"
+                    />
+                    <source src="confero-desktop/events.mp4" type="video/mp4" />
+                </video>
                 <img
                     src="confero-desktop/Frame 12.jpg"
                     alt="app UI"
@@ -163,14 +176,20 @@ export default function page() {
                     className="w-full rounded-3xl"
                 >
                     <source
-                        src="confero-desktop/Event-Bg.webm"
+                        src="confero-desktop/desktop-chats (1080p).webm"
                         type="video/webm"
                     />
                     <source
-                        src="confero-desktop/Event-Bg.mp4"
+                        src="confero-desktop/desktop-chats.mp4"
                         type="video/mp4"
                     />
                 </video>
+                <img
+                    src="confero-desktop/Frame 14.jpg"
+                    alt="app UI"
+                    loading="lazy"
+                    className="rounded-3xl w-full object-cover"
+                />
             </section>
         </div>
     );

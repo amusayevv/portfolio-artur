@@ -78,6 +78,20 @@ export default function Page() {
             </section>
 
             <section className="flex flex-col gap-10 px-6">
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full rounded-3xl"
+                >
+                    <source
+                        src="insider-videos/Notion (1080).webm"
+                        type="video/webm"
+                    />
+                    <source src="insider-videos/Notion.mp4" type="video/mp4" />
+                </video>
+
                 <img
                     className="w-full h-full object-contain rounded-3xl"
                     src="screeeeen.jpg"

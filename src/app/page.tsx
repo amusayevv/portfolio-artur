@@ -219,7 +219,7 @@ export default function Page() {
                             <PortfolioCard
                                 imgpath="/project3.webp"
                                 logopath="/confero.svg"
-                                url="#"
+                                url="/confero-mobile"
                                 title="Confero"
                                 description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
                             />
@@ -228,7 +228,7 @@ export default function Page() {
                             <PortfolioCard
                                 imgpath="/project4.webp"
                                 logopath="/confero.svg"
-                                url="#"
+                                url="/confero-tv"
                                 title="Confero"
                                 description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
                             />
