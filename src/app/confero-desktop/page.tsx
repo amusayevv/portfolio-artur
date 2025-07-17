@@ -10,7 +10,7 @@ export default function page() {
                 src="project2.webp"
                 alt="Laptop"
             />
-            <section className="flex gap-4 px-6">
+            <section className="flex lg:flex-row flex-col lg:gap-4 gap-12 px-6">
                 <div className="flex flex-col gap-10 flex-2/5">
                     <div className="flex gap-4 items-center">
                         <img src="confero.svg" alt="" />
@@ -77,7 +77,7 @@ export default function page() {
                 </div>
             </section>
 
-            <section className="px-6">
+            <section className="flex flex-col gap-10 px-6">
                 <img
                     src="confero-desktop-2.jpg"
                     alt="app UI"
@@ -85,19 +85,92 @@ export default function page() {
                     className="rounded-3xl w-full object-cover"
                 />
                 <video
-                    src="confero-desktop/event-create.mp4"
                     autoPlay
                     muted
                     loop
                     playsInline
                     className="w-full rounded-3xl"
-                ></video>
+                >
+                    <source
+                        src="confero-desktop/event-create.webm"
+                        type="video/webm"
+                    />
+                    <source
+                        src="confero-desktop/event-create.mp4"
+                        type="video/mp4"
+                    />
+                </video>
                 <img
                     src="confero-desktop-3.jpg"
                     alt="app UI"
                     loading="lazy"
                     className="rounded-3xl w-full object-cover"
                 />
+                <div>
+                    <img
+                        src="confero-desktop/Frame 01.jpg"
+                        alt="about corporate messenger and video conferencing 01 Simplified navigation. Users can now find key functions faster and more intuitively 02 Faster meeting creation. The process is clearer, more flexible, and takes less time 03 Intuitive meeting management. Moderators can now react quickly and efficiently"
+                        loading="lazy"
+                        className="rounded-3xl w-full object-cover"
+                    />
+                    <img
+                        src="confero-desktop/Frame 02.jpg"
+                        alt="app UI"
+                        loading="lazy"
+                        className="rounded-3xl w-full object-cover"
+                    />
+                </div>
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full rounded-3xl"
+                >
+                    <source
+                        src="confero-desktop/Contact-bg.webm"
+                        type="video/webm"
+                    />
+                    <source
+                        src="confero-desktop/Contact-bg.mp4"
+                        type="video/mp4"
+                    />
+                </video>
+                <img
+                    src="confero-desktop/Frame 04.jpg"
+                    alt="app UI"
+                    loading="lazy"
+                    className="rounded-3xl w-full object-cover"
+                />
+                <img
+                    src="confero-desktop/Frame 06.jpg"
+                    alt="app UI"
+                    loading="lazy"
+                    className="rounded-3xl w-full object-cover"
+                />
+                <img
+                    src="confero-desktop/Frame 12.jpg"
+                    alt="app UI"
+                    loading="lazy"
+                    className="rounded-3xl w-full object-cover"
+                />
+
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full rounded-3xl"
+                >
+                    <source
+                        src="confero-desktop/Event-Bg.webm"
+                        type="video/webm"
+                    />
+                    <source
+                        src="confero-desktop/Event-Bg.mp4"
+                        type="video/mp4"
+                    />
+                </video>
             </section>
         </div>
     );

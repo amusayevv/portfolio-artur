@@ -82,6 +82,7 @@ export default function Page() {
                     className="w-full h-full object-contain rounded-3xl"
                     src="screeeeen.jpg"
                     alt="blue"
+                    loading="lazy"
                 />
                 <div className="flex flex-row w-full gap-4 aspect-[9/5]">
                     <div className="flex-1 aspect-[4/5]">
@@ -96,17 +97,26 @@ export default function Page() {
                             className="w-full h-full object-cover rounded-3xl"
                             src="Rectangle 2096.jpg"
                             alt="2 phones"
+                            loading="lazy"
                         />
                     </div>
                 </div>
                 <video
-                    src="insider-videos/horizontal-video-1 4k.mp4"
                     autoPlay
                     muted
                     loop
                     playsInline
                     className="w-full rounded-3xl"
-                ></video>
+                >
+                    <source
+                        src="insider-videos/Horizontal-video-1 4K (1080p).webm"
+                        type="video/webm"
+                    />
+                    <source
+                        src="insider-videos/horizontal-video-1 4k (1080p).mp4"
+                        type="video/mp4"
+                    />
+                </video>
 
                 <img
                     className="w-full h-full object-contain object-bottom-left rounded-3xl"
@@ -152,7 +162,16 @@ export default function Page() {
                     loop
                     playsInline
                     className="w-full rounded-3xl"
-                ></video>
+                >
+                    <source
+                        src="insider-videos/Horizontal-video-2 4K (1080p).webm"
+                        type="video/webm"
+                    />
+                    <source
+                        src="insider-videos/horizontal-video-2 4k (1080p).mp4"
+                        type="video/mp4"
+                    />
+                </video>
             </section>
 
             <Footer />
