@@ -201,7 +201,7 @@ export default function Page() {
                 >
                     <h2 className="text-[32px]">Projects</h2>
                     <div className="grid lg:grid-cols-2 grid-cols-1 gap-10">
-                        <div className="flex flex-col gap-10" data-speed="1.4">
+                        <div className="flex flex-col gap-10">
                             <PortfolioCard
                                 imgpath="/project1.webp"
                                 logopath="/insider.svg"
@@ -224,7 +224,7 @@ export default function Page() {
                                 description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
                             />
                         </div>
-                        <div className="flex flex-col gap-10" data-speed="1.2">
+                        <div className="flex flex-col gap-10">
                             <PortfolioCard
                                 imgpath="/project4.webp"
                                 logopath="/confero.svg"
