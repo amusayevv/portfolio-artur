@@ -1,8 +1,11 @@
 import Footer from "../_components/footer";
+import Nav from "../_components/nav";
 
 export default function Page() {
     return (
         <div className="flex flex-col gap-20">
+            <Nav />
+
             <img
                 className="w-full h-dvh object-cover"
                 src="Homescreen Mockup.webp"

@@ -18,6 +18,7 @@ export default function PortfolioCard({
                     href={url}
                     className="project rounded-2xl h-[480px] bg-cover bg-center bg-zoom-transition"
                     style={{ backgroundImage: `url(${imgpath})` }}
+                    title={title}
                 ></a>
             </div>
         </div>

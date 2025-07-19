@@ -4,7 +4,7 @@ export default function Footer() {
             className="flex lg:flex-row flex-col w-full lg:justify-around justify-center gap-8 mt-40 pb-100 lg:px-0 px-6 lg:text-left text-center"
             style={{
                 background:
-                    "radial-gradient(200% 100% at 50% 100%, #C5B0F8 0%, #4622A8 16%, #090828 40%, #030712 60%, #030712 100%), #030712;",
+                    "radial-gradient(200% 100% at 50% 100%, #C5B0F8 0%, #4622A8 16%, #090828 40%, #030712 60%, #030712 100%), #030712",
             }}
         >
             <div className="lg:max-w-[480px] w-full text-white/60 flex flex-col gap-10">

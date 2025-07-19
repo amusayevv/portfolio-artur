@@ -1,10 +1,13 @@
 "use client";
 import { useEffect } from "react";
 import { gsap } from "gsap";
+import Nav from "../_components/nav";
 
 export default function page() {
     return (
         <div className="flex flex-col gap-20">
+            <Nav />
+
             <img
                 className="w-full h-dvh object-cover"
                 src="project5.webp"

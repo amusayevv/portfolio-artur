@@ -2,16 +2,17 @@
 import { useEffect, useState } from "react";
 
 import { gsap } from "gsap";
-import _ScrollTrigger, { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
 import Cursor from "./_components/cursor";
 import PortfolioCard from "./_components/portfolioCard";
 import { LightningBoltIcon } from "@radix-ui/react-icons";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 import AboutCard from "./_components/aboutCard";
+import Nav from "./_components/nav";
 import Footer from "./_components/footer";
 
 export default function Page() {
+    const [activeSection, setActiveSection] = useState("home");
+
     useEffect(() => {
         let interBubble = document.querySelector(".interactive");
         const xTo = gsap.quickTo(interBubble, "x", {
@@ -26,20 +27,6 @@ export default function Page() {
             xTo(e.clientX);
             yTo(e.clientY);
         });
-
-        gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-
-        if (!ScrollTrigger.isTouch) {
-            ScrollSmoother.create({
-                smooth: 1,
-                effects: true,
-                normalizeScroll: false,
-            });
-
-            ScrollTrigger.create({
-                trigger: "#projects",
-            });
-        }
 
         if (window.innerWidth >= 720) {
             const elements = document.querySelectorAll(".scrambleText");
@@ -64,8 +51,29 @@ export default function Page() {
                 { threshold: 0.5 }
             );
             elements.forEach((el) => observer.observe(el));
+            const sections = [
+                { id: "home", ref: document.querySelector("#home") },
+                { id: "projects", ref: document.querySelector("#projects") },
+                { id: "services", ref: document.querySelector("#services") },
+                { id: "about", ref: document.querySelector("#about") },
+            ];
 
-            return () => observer.disconnect();
+            const navObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            });
+
+            sections.forEach((section) => {
+                if (section.ref) navObserver.observe(section.ref);
+            });
+
+            return () => {
+                observer.disconnect();
+                navObserver.disconnect();
+            };
         }
     }, []);
 
@@ -118,15 +126,12 @@ export default function Page() {
     return (
         <div id="smooth-wrapper">
             <Cursor text="VIEW PROJECT" />
+            <Nav activeSection={activeSection} />
 
             <div id="smooth-content">
                 <section
                     id="home"
                     className="h-dvh flex w-full lg:px-40 px-6 items-center justify-start"
-                    // style={{
-                    //     background:
-                    //         "radial-gradient(100% 100% at 50% 0%, #000 0%, #000 46.63%, #090828 61.06%, #4622A8 83.29%, #C5B0F8 100%)",
-                    // }}
                 >
                     <div className="gradient-bg z-0">
                         <svg xmlns="http://www.w3.org/2000/svg">
@@ -161,7 +166,9 @@ export default function Page() {
                     <div className="flex flex-col items-start gap-6 z-10">
                         <div className="flex inset-shadow-2xs inset-shadow-gray-600 rounded-full bg-white/10 text-white items-center gap-3 px-4 py-2">
                             <div className="w-[10px] h-[10px] bg-green-400 rounded-full"></div>
-                            <p>Available to work</p>
+                            <p className="text-xs lg:text-base">
+                                Available to work
+                            </p>
                         </div>
                         <h1 className="lg:text-[4rem] text-[2rem] leading-[120%] font-semibold lg:max-w-[1000px] text-white">
                             <div className="overflow-hidden py-1">
@@ -213,14 +220,14 @@ export default function Page() {
                                 imgpath="/project2.webp"
                                 logopath="/confero.svg"
                                 url="confero-desktop"
-                                title="Confero"
+                                title="Confero Desktop"
                                 description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
                             />
                             <PortfolioCard
                                 imgpath="/project3.webp"
                                 logopath="/confero.svg"
                                 url="/confero-mobile"
-                                title="Confero"
+                                title="Confero Mobile"
                                 description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
                             />
                         </div>
@@ -229,20 +236,23 @@ export default function Page() {
                                 imgpath="/project4.webp"
                                 logopath="/confero.svg"
                                 url="/confero-tv"
-                                title="Confero"
+                                title="Confero TV"
                                 description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
                             />
                             <PortfolioCard
                                 imgpath="/project5.webp"
                                 logopath="/confero.svg"
                                 url="/sbc"
-                                title="Confero"
+                                title="SBC"
                                 description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
                             />
                         </div>
                     </div>
                 </section>
-                <section className="px-6 mt-[100px] flex flex-col gap-10">
+                <section
+                    id="services"
+                    className="px-6 mt-[100px] flex flex-col gap-10"
+                >
                     <h2 className="text-[32px]">Services</h2>
 
                     <div className="grid lg:grid-cols-2 grid-cols-1 flex-col gap-6">
@@ -346,7 +356,7 @@ export default function Page() {
                     </div>
                 </section>
                 <section
-                    id="services"
+                    id="about"
                     className="px-6 mt-[100px] flex flex-col gap-10 items-center content-center"
                 >
                     <div className="flex flex-col gap-10 overflow-hidden relative p-0.5">
@@ -405,8 +415,8 @@ export default function Page() {
                         </div>
                     </div>
                 </section>
-                <Footer />
             </div>
+            <Footer />
         </div>
     );
 }
