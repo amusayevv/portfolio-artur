@@ -103,11 +103,7 @@ export default function page() {
                     className="w-full rounded-3xl"
                 >
                     <source
-                        src="confero-tv/event-create.webm"
-                        type="video/webm"
-                    />
-                    <source
-                        src="confero-desktop/event-create.mp4"
+                        src="confero-tv/event-create.mp4"
                         type="video/mp4"
                     />
                 </video>
@@ -130,11 +126,7 @@ export default function page() {
                     playsInline
                     className="w-full rounded-3xl"
                 >
-                    <source src="confero-tv/Event-Bg.webm" type="video/webm" />
-                    <source
-                        src="confero-desktop/Event-Bg.mp4"
-                        type="video/mp4"
-                    />
+                    <source src="confero-tv/event.mp4" type="video/mp4" />
                 </video>
                 <img
                     src="confero-tv/Frame 06.jpg"
@@ -155,14 +147,7 @@ export default function page() {
                     playsInline
                     className="w-full rounded-3xl"
                 >
-                    <source
-                        src="confero-tv/Contact-bg.webm"
-                        type="video/webm"
-                    />
-                    <source
-                        src="confero-desktop/Contact-bg.mp4"
-                        type="video/mp4"
-                    />
+                    <source src="confero-tv/contact.mp4" type="video/mp4" />
                 </video>
                 <img
                     src="confero-tv/Frame 07.jpg"

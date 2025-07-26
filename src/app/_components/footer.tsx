@@ -14,7 +14,7 @@ export default function Footer() {
                 <a
                     href="https://www.linkedin.com/in/artur-yurin/"
                     target="_blank"
-                    className="btn-gradient content-center rounded-[4px] px-6 text-white/80 text-center h-12 lg:w-[80%] w-full"
+                    className="btn-gradient content-center rounded-[4px] px-6 text-white/80 text-center h-12 w-full"
                 >
                     Get in touch
                 </a>

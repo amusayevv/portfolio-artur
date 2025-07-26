@@ -81,20 +81,6 @@ export default function Page() {
             </section>
 
             <section className="flex flex-col gap-10 px-6">
-                <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full rounded-3xl"
-                >
-                    <source
-                        src="insider-videos/Notion (1080).webm"
-                        type="video/webm"
-                    />
-                    <source src="insider-videos/Notion.mp4" type="video/mp4" />
-                </video>
-
                 <img
                     className="w-full h-full object-contain rounded-3xl"
                     src="screeeeen.jpg"
@@ -126,11 +112,7 @@ export default function Page() {
                     className="w-full rounded-3xl"
                 >
                     <source
-                        src="insider-videos/Horizontal-video-1 4K (1080p).webm"
-                        type="video/webm"
-                    />
-                    <source
-                        src="insider-videos/horizontal-video-1 4k (1080p).mp4"
+                        src="insider-videos/launchpad.mp4"
                         type="video/mp4"
                     />
                 </video>
@@ -173,7 +155,6 @@ export default function Page() {
                     alt="blue"
                 />
                 <video
-                    src="insider-videos/horizontal-video-2 4k.mp4"
                     autoPlay
                     muted
                     loop
@@ -181,11 +162,7 @@ export default function Page() {
                     className="w-full rounded-3xl"
                 >
                     <source
-                        src="insider-videos/Horizontal-video-2 4K (1080p).webm"
-                        type="video/webm"
-                    />
-                    <source
-                        src="insider-videos/horizontal-video-2 4k (1080p).mp4"
+                        src="insider-videos/trading-bot.mp4"
                         type="video/mp4"
                     />
                 </video>

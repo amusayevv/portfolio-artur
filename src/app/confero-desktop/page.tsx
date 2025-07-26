@@ -95,10 +95,6 @@ export default function page() {
                     className="w-full rounded-3xl"
                 >
                     <source
-                        src="confero-desktop/active-event (1080p).webm"
-                        type="video/webm"
-                    />
-                    <source
                         src="confero-desktop/active-event.mp4"
                         type="video/mp4"
                     />
@@ -130,10 +126,6 @@ export default function page() {
                     playsInline
                     className="w-full rounded-3xl"
                 >
-                    <source
-                        src="confero-desktop/contacts (1080p).webm"
-                        type="video/webm"
-                    />
                     <source
                         src="confero-desktop/contacts.mp4"
                         type="video/mp4"
@@ -178,10 +170,6 @@ export default function page() {
                     playsInline
                     className="w-full rounded-3xl"
                 >
-                    <source
-                        src="confero-desktop/desktop-chats (1080p).webm"
-                        type="video/webm"
-                    />
                     <source
                         src="confero-desktop/desktop-chats.mp4"
                         type="video/mp4"

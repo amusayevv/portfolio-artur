@@ -89,10 +89,6 @@ export default function page() {
                     className="w-full rounded-3xl"
                 >
                     <source
-                        src="confero-mobile/event-video (1080p).webm"
-                        type="video/webm"
-                    />
-                    <source
                         src="confero-mobile/event-video.mp4"
                         type="video/mp4"
                     />
@@ -118,10 +114,6 @@ export default function page() {
                     playsInline
                     className="w-full rounded-3xl"
                 >
-                    <source
-                        src="confero-mobile/chat (1080p).webm"
-                        type="video/webm"
-                    />
                     <source src="confero-mobile/chat.mp4" type="video/mp4" />
                 </video>
 
@@ -145,10 +137,6 @@ export default function page() {
                     playsInline
                     className="w-full rounded-3xl"
                 >
-                    <source
-                        src="confero-mobile/contact-call (1080p).webm"
-                        type="video/webm"
-                    />
                     <source
                         src="confero-mobile/contact-call.mp4"
                         type="video/mp4"
@@ -174,10 +162,6 @@ export default function page() {
                     playsInline
                     className="w-full rounded-3xl"
                 >
-                    <source
-                        src="confero-mobile/event-invite (1080p).webm"
-                        type="video/webm"
-                    />
                     <source
                         src="confero-mobile/event-invite.mp4"
                         type="video/mp4"
