@@ -1,7 +1,7 @@
 "use client";
-import { useEffect } from "react";
-import { gsap } from "gsap";
+import { ExternalLinkIcon } from "@radix-ui/react-icons";
 import Nav from "../_components/nav";
+import Footer from "../_components/footer";
 
 export default function page() {
     return (
@@ -22,21 +22,22 @@ export default function page() {
                         </h3>
                     </div>
                     <div className="flex gap-4 flex-wrap">
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            UI/UX Research
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            Design System
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            WEB Design
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            Branding
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            Corporate
-                        </p>
+                        <a
+                            href="https://www.notion.so/OLD-Confero-Web-Desktop-19d5998c81ba8047b2b0fc5e592f8867"
+                            target="_blank"
+                            className="px-4 py-2 bg-white/10 rounded-[8px] flex gap-2 items-center"
+                        >
+                            <ExternalLinkIcon />
+                            Notion
+                        </a>
+                        <a
+                            href="https://www.behance.net/gallery/222422801/Confero-Web-Desktop"
+                            target="_blank"
+                            className="px-4 py-2 bg-white/10 rounded-[8px] flex gap-2 items-center"
+                        >
+                            <ExternalLinkIcon />
+                            Behance
+                        </a>
                     </div>
                     <a
                         href="https://www.linkedin.com/in/artur-yurin/"
@@ -182,6 +183,7 @@ export default function page() {
                     className="rounded-3xl w-full object-cover"
                 />
             </section>
+            <Footer />
         </div>
     );
 }

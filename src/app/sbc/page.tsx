@@ -1,7 +1,7 @@
 "use client";
-import { useEffect } from "react";
-import { gsap } from "gsap";
 import Nav from "../_components/nav";
+import Footer from "../_components/footer";
+import { ExternalLinkIcon } from "@radix-ui/react-icons";
 
 export default function page() {
     return (
@@ -22,21 +22,22 @@ export default function page() {
                         </h3>
                     </div>
                     <div className="flex gap-4 flex-wrap">
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            UI/UX Research
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            Design System
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            WEB Design
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            Branding
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            Corporate
-                        </p>
+                        <a
+                            href="https://www.notion.so/OLD-SBC-Admin-System-1425998c81ba8089a5a2d144c3d54d04"
+                            target="_blank"
+                            className="px-4 py-2 bg-white/10 rounded-[8px] flex gap-2 items-center"
+                        >
+                            <ExternalLinkIcon />
+                            Notion
+                        </a>
+                        <a
+                            href="https://www.figma.com/design/asBkbyvn7JpruNhSZoCQA8/SBC-Portfolio-Case?node-id=0-1&node-type=canvas&t=QCuzH4fwJ3JFDFpi-0"
+                            target="_blank"
+                            className="px-4 py-2 bg-white/10 rounded-[8px] flex gap-2 items-center"
+                        >
+                            <ExternalLinkIcon />
+                            Figma
+                        </a>
                     </div>
                     <a
                         href="https://www.linkedin.com/in/artur-yurin/"
@@ -204,6 +205,7 @@ export default function page() {
                     className="rounded-3xl w-full object-cover"
                 />
             </section>
+            <Footer />
         </div>
     );
 }

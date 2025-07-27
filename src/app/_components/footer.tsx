@@ -39,7 +39,10 @@ export default function Footer() {
                             />
                         </svg>
                     </a>
-                    <a href="https://www.linkedin.com/in/artur-yurin">
+                    <a
+                        href="https://www.linkedin.com/in/artur-yurin"
+                        target="_blank"
+                    >
                         <svg
                             width="24"
                             height="24"
@@ -69,7 +72,7 @@ export default function Footer() {
                             />
                         </svg>
                     </a>
-                    <a href="#">
+                    <a href="https://t.me/uxuidesssigner" target="_blank">
                         <svg
                             width="24"
                             height="24"
@@ -88,23 +91,23 @@ export default function Footer() {
             </div>
             <div className="flex flex-col lg:gap-4 gap-6">
                 <p className="text-white/60">Portfolio</p>
-                <a className="hover:text-white/60" href="#">
+                <a className="hover:text-white/60" href="/insider">
                     Insider
                 </a>
-                <a className="hover:text-white/60" href="#">
+                <a className="hover:text-white/60" href="/confero-desktop">
                     Confero Desktop
                 </a>
-                <a className="hover:text-white/60" href="#">
+                <a className="hover:text-white/60" href="/confero-mobile">
                     Confero Mobile
                 </a>
-                <a className="hover:text-white/60" href="#">
+                <a className="hover:text-white/60" href="/confero-tv">
                     Confero TV
                 </a>
-                <a className="hover:text-white/60" href="#">
+                <a className="hover:text-white/60" href="/sbc">
                     SBC Admin
                 </a>
-                <a className="hover:text-white/60" href="#">
-                    Yandex Travel
+                <a className="hover:text-white/60" href="/synto">
+                    Synto Design System
                 </a>
             </div>
         </footer>

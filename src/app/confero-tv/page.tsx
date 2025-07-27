@@ -1,7 +1,7 @@
 "use client";
-import { useEffect } from "react";
-import { gsap } from "gsap";
+import { ExternalLinkIcon } from "@radix-ui/react-icons";
 import Nav from "../_components/nav";
+import Footer from "../_components/footer";
 
 export default function page() {
     return (
@@ -17,26 +17,25 @@ export default function page() {
                 <div className="flex flex-col gap-10 flex-2/5">
                     <div className="flex gap-4 items-center">
                         <img src="confero.svg" alt="" />
-                        <h3 className="text-2xl font-medium">
-                            Confero Desktop
-                        </h3>
+                        <h3 className="text-2xl font-medium">Confero TV</h3>
                     </div>
                     <div className="flex gap-4 flex-wrap">
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            UI/UX Research
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            Design System
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            WEB Design
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            Branding
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            Corporate
-                        </p>
+                        <a
+                            href="https://www.notion.so/OLD-Confero-TV-19f5998c81ba80d58345ff34d35c2fd8"
+                            target="_blank"
+                            className="px-4 py-2 bg-white/10 rounded-[8px] flex gap-2 items-center"
+                        >
+                            <ExternalLinkIcon />
+                            Notion
+                        </a>
+                        <a
+                            href="https://www.behance.net/gallery/220434633/Confero-TV"
+                            target="_blank"
+                            className="px-4 py-2 bg-white/10 rounded-[8px] flex gap-2 items-center"
+                        >
+                            <ExternalLinkIcon />
+                            Behance
+                        </a>
                     </div>
                     <a
                         href="https://www.linkedin.com/in/artur-yurin/"
@@ -156,6 +155,7 @@ export default function page() {
                     className="rounded-3xl w-full object-cover"
                 />
             </section>
+            <Footer />
         </div>
     );
 }

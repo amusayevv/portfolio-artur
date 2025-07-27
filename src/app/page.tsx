@@ -246,6 +246,13 @@ export default function Page() {
                                 title="SBC"
                                 description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
                             />
+                            <PortfolioCard
+                                imgpath="/design-system/image.webp"
+                                logopath="/confero.svg"
+                                url="/synto"
+                                title="Synto Design System"
+                                description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
+                            />
                         </div>
                     </div>
                 </section>

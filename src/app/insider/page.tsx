@@ -1,5 +1,6 @@
 import Footer from "../_components/footer";
 import Nav from "../_components/nav";
+import { ExternalLinkIcon } from "@radix-ui/react-icons";
 
 export default function Page() {
     return (
@@ -19,24 +20,38 @@ export default function Page() {
                         <h3 className="text-2xl font-medium">Insider</h3>
                     </div>
                     <div className="flex gap-4 flex-wrap">
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            UI/UX Research
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            Design System
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            WEB Design
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            Branding
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            WEB3
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            Crypto
-                        </p>
+                        <a
+                            href="https://myinsider.club/en/login"
+                            target="_blank"
+                            className="px-4 py-2 bg-white/10 rounded-[8px] flex gap-2 items-center"
+                        >
+                            <ExternalLinkIcon />
+                            Platform
+                        </a>
+                        <a
+                            href="https://www.notion.so/OLD-Insider-Platform-1055998c81ba809fbb46e2c2c8e49b91"
+                            target="_blank"
+                            className="px-4 py-2 bg-white/10 rounded-[8px] flex gap-2 items-center"
+                        >
+                            <ExternalLinkIcon />
+                            Notion
+                        </a>
+                        <a
+                            href="https://www.figma.com/design/wBD03wOApwbAIpTN2GKXOE/Insider-NEW?node-id=349-7685&node-type=canvas&t=VPp0DWLlIH6o55TP-0"
+                            target="_blank"
+                            className="px-4 py-2 bg-white/10 rounded-[8px] flex gap-2 items-center"
+                        >
+                            <ExternalLinkIcon />
+                            Figma
+                        </a>
+                        <a
+                            href="https://www.behance.net/gallery/215605467/Insider"
+                            target="_blank"
+                            className="px-4 py-2 bg-white/10 rounded-[8px] flex gap-2 items-center"
+                        >
+                            <ExternalLinkIcon />
+                            Behance
+                        </a>
                     </div>
                     <a
                         href="https://www.linkedin.com/in/artur-yurin/"
