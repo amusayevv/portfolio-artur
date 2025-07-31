@@ -193,6 +193,13 @@ export default function Page() {
                         type="video/mp4"
                     />
                 </video>
+                <a
+                    href="https://www.notion.so/OLD-Insider-Platform-1055998c81ba809fbb46e2c2c8e49b91?source=copy_link"
+                    className="button-link px-8 py-3 rounded-[0.5rem] font-semibold text-center"
+                    target="_blank"
+                >
+                    See full project
+                </a>
             </section>
 
             <Footer />
