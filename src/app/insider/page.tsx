@@ -1,6 +1,7 @@
 import Footer from "../_components/footer";
 import Nav from "../_components/nav";
 import { ExternalLinkIcon } from "@radix-ui/react-icons";
+import LazyLoadImage from "../_components/lazyLoadImage";
 
 export default function Page() {
     return (
@@ -96,26 +97,27 @@ export default function Page() {
             </section>
 
             <section className="flex flex-col gap-10 px-6">
-                <img
-                    className="w-full h-full object-contain rounded-3xl"
-                    src="screeeeen.jpg"
-                    alt="blue"
-                    loading="lazy"
+                <LazyLoadImage
+                    srcLow="screeeeen480.jpg"
+                    srcHigh="screeeeen.jpg"
+                    alt="creen with 3 rectangles"
+                    classString="w-full h-full object-contain rounded-3xl"
                 />
                 <div className="flex flex-row w-full gap-4 aspect-[9/5]">
                     <div className="flex-1 aspect-[4/5]">
-                        <img
-                            className="w-full h-full object-cover rounded-3xl"
-                            src="Frame 1618868892.jpg"
-                            alt="UI elements"
+                        <LazyLoadImage
+                            srcLow="Frame 1618868892 480.jpg"
+                            srcHigh="Frame 1618868892.jpg"
+                            alt="UI screen"
+                            classString="w-full h-full object-cover rounded-3xl"
                         />
                     </div>
                     <div className="flex-1 aspect-[4/5]">
-                        <img
-                            className="w-full h-full object-cover rounded-3xl"
-                            src="Rectangle 2096.jpg"
-                            alt="2 phones"
-                            loading="lazy"
+                        <LazyLoadImage
+                            srcLow="Rectangle 2096 (2).jpg"
+                            srcHigh="Rectangle 2096.jpg"
+                            alt="UI screen"
+                            classString="w-full h-full object-cover rounded-3xl"
                         />
                     </div>
                 </div>
@@ -125,6 +127,7 @@ export default function Page() {
                     loop
                     playsInline
                     className="w-full rounded-3xl"
+                    poster="insider-videos/launchpad.jpg"
                 >
                     <source
                         src="insider-videos/launchpad.mp4"
@@ -132,42 +135,50 @@ export default function Page() {
                     />
                 </video>
 
-                <img
-                    className="w-full h-full object-contain object-bottom-left rounded-3xl"
-                    src="insider-1.jpg"
-                    alt="blue"
+                <LazyLoadImage
+                    srcLow="insider-1 (2).jpg"
+                    srcHigh="insider-1.jpg"
+                    alt="UI screen"
+                    classString="w-full h-full object-contain object-bottom-left rounded-3x"
                 />
+
                 <div className="flex w-full gap-4">
-                    <img
-                        className="flex-1 w-0 rounded-3xl object-cover"
-                        src="Frame 1618868889.jpg"
-                        alt="UI elements"
+                    <LazyLoadImage
+                        srcLow="Frame 1618868889 480.jpg"
+                        srcHigh="Frame 1618868889.jpg"
+                        alt="UI screen"
+                        classString="flex-1 w-0 rounded-3xl object-cover"
                     />
-                    <img
-                        className="flex-1 w-0 rounded-3xl object-cover"
-                        src="Frame 1618868890.jpg"
-                        alt="2 phones"
+                    <LazyLoadImage
+                        srcLow="Frame 1618868890 480.jpg"
+                        srcHigh="Frame 1618868890.jpg"
+                        alt="UI screen"
+                        classString="flex-1 w-0 rounded-3xl object-cover"
                     />
                 </div>
-                <img
-                    className="w-full h-full object-contain object-bottom-left rounded-3xl"
-                    src="Frame 1618868895.jpg"
-                    alt="blue"
+                <LazyLoadImage
+                    srcLow="Frame 1618868895 (2).jpg"
+                    srcHigh="Frame 1618868895.jpg"
+                    alt="UI screen"
+                    classString="w-full h-full object-contain object-bottom-left rounded-3xl"
                 />
-                <img
-                    className="w-full h-full object-contain object-bottom-left rounded-3xl"
-                    src="Frame 1618868899.webp"
-                    alt="blue"
+                <LazyLoadImage
+                    srcLow="Frame 1618868899 (2).webp"
+                    srcHigh="Frame 1618868899.webp"
+                    alt="UI screen"
+                    classString="w-full h-full object-contain object-bottom-left rounded-3xl"
                 />
-                <img
-                    className="w-full h-full object-contain object-bottom-left rounded-3xl"
-                    src="mobile-insider.jpg"
-                    alt="blue"
+                <LazyLoadImage
+                    srcLow="mobile-insider (2).jpg"
+                    srcHigh="mobile-insider.jpg"
+                    alt="UI screen"
+                    classString="w-full h-full object-contain object-bottom-left rounded-3xl"
                 />
-                <img
-                    className="w-full h-full object-contain object-bottom-left rounded-3xl"
-                    src="mobile-insider-22.jpg"
-                    alt="blue"
+                <LazyLoadImage
+                    srcLow="mobile-insider-22 (2).jpg"
+                    srcHigh="mobile-insider-22.jpg"
+                    alt="UI screen"
+                    classString="w-full h-full object-contain object-bottom-left rounded-3xl"
                 />
                 <video
                     autoPlay
@@ -175,6 +186,7 @@ export default function Page() {
                     loop
                     playsInline
                     className="w-full rounded-3xl"
+                    poster="insider-videos/trading-bot.jpg"
                 >
                     <source
                         src="insider-videos/trading-bot.mp4"
