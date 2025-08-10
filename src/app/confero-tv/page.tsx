@@ -2,6 +2,7 @@
 import { ExternalLinkIcon } from "@radix-ui/react-icons";
 import Nav from "../_components/nav";
 import Footer from "../_components/footer";
+import LazyLoadImage from "../_components/lazyLoadImage";
 
 export default function page() {
     return (
@@ -81,17 +82,17 @@ export default function page() {
 
             <section className="flex flex-col gap-10 px-6">
                 <div>
-                    <img
-                        src="confero-tv/Frame 01.jpg"
+                    <LazyLoadImage
+                        srcLow="/confero-tv/Frame 01 (2).jpg"
+                        srcHigh="/confero-tv/Frame 01.jpg"
                         alt="app UI"
-                        loading="lazy"
-                        className="rounded-3xl w-full object-cover"
+                        classString="w-full h-full object-contain rounded-3xl"
                     />
-                    <img
-                        src="confero-tv/Frame 02.jpg"
+                    <LazyLoadImage
+                        srcLow="/confero-tv/Frame 02 (2).jpg"
+                        srcHigh="/confero-tv/Frame 02.jpg"
                         alt="app UI"
-                        loading="lazy"
-                        className="rounded-3xl w-full object-cover"
+                        classString="w-full h-full object-contain rounded-3xl"
                     />
                 </div>
                 <video
@@ -100,23 +101,24 @@ export default function page() {
                     loop
                     playsInline
                     className="w-full rounded-3xl"
+                    poster="confero-tv/event-create.jpg"
                 >
                     <source
                         src="confero-tv/event-create.mp4"
                         type="video/mp4"
                     />
                 </video>
-                <img
-                    src="confero-tv/Frame 04.jpg"
+                <LazyLoadImage
+                    srcLow="/confero-tv/Frame 04 (2).jpg"
+                    srcHigh="/confero-tv/Frame 04.jpg"
                     alt="app UI"
-                    loading="lazy"
-                    className="rounded-3xl w-full object-cover"
+                    classString="w-full h-full object-contain rounded-3xl"
                 />
-                <img
-                    src="confero-tv/Frame 05.jpg"
+                <LazyLoadImage
+                    srcLow="/confero-tv/Frame 05 (2).jpg"
+                    srcHigh="/confero-tv/Frame 05.jpg"
                     alt="app UI"
-                    loading="lazy"
-                    className="rounded-3xl w-full object-cover"
+                    classString="w-full h-full object-contain rounded-3xl"
                 />
                 <video
                     autoPlay
@@ -124,20 +126,21 @@ export default function page() {
                     loop
                     playsInline
                     className="w-full rounded-3xl"
+                    poster="confero-tv/event.jpg"
                 >
                     <source src="confero-tv/event.mp4" type="video/mp4" />
                 </video>
-                <img
-                    src="confero-tv/Frame 06.jpg"
+                <LazyLoadImage
+                    srcLow="/confero-tv/Frame 06 (2).jpg"
+                    srcHigh="/confero-tv/Frame 06.jpg"
                     alt="app UI"
-                    loading="lazy"
-                    className="rounded-3xl w-full object-cover"
+                    classString="w-full h-full object-contain rounded-3xl"
                 />
-                <img
-                    src="confero-tv/04.jpg"
+                <LazyLoadImage
+                    srcLow="/confero-tv/04 (2).jpg"
+                    srcHigh="/confero-tv/04.jpg"
                     alt="app UI"
-                    loading="lazy"
-                    className="rounded-3xl w-full object-cover"
+                    classString="w-full h-full object-contain rounded-3xl"
                 />
                 <video
                     autoPlay
@@ -145,9 +148,17 @@ export default function page() {
                     loop
                     playsInline
                     className="w-full rounded-3xl"
+                    poster="confero-tv/contact.jpg"
                 >
                     <source src="confero-tv/contact.mp4" type="video/mp4" />
                 </video>
+                <LazyLoadImage
+                    srcLow="/confero-tv/Frame 07 (2).jpg"
+                    srcHigh="/confero-tv/Frame 07.jpg"
+                    alt="app UI"
+                    classString="w-full h-full object-contain rounded-3xl"
+                />
+
                 <img
                     src="confero-tv/Frame 07.jpg"
                     alt="app UI"
