@@ -158,13 +158,6 @@ export default function page() {
                     alt="app UI"
                     classString="w-full h-full object-contain rounded-3xl"
                 />
-
-                <img
-                    src="confero-tv/Frame 07.jpg"
-                    alt="app UI"
-                    loading="lazy"
-                    className="rounded-3xl w-full object-cover"
-                />
             </section>
             <Footer />
         </div>
