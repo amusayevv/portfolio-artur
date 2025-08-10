@@ -2,6 +2,7 @@
 import { ExternalLinkIcon } from "@radix-ui/react-icons";
 import Nav from "../_components/nav";
 import Footer from "../_components/footer";
+import LazyLoadImage from "../_components/lazyLoadImage";
 
 export default function page() {
     return (
@@ -86,24 +87,26 @@ export default function page() {
                     loop
                     playsInline
                     className="w-full rounded-3xl"
+                    poster="confero-mobile/event-video.jpg"
                 >
                     <source
                         src="confero-mobile/event-video.mp4"
                         type="video/mp4"
                     />
                 </video>
+
                 <div>
-                    <img
-                        src="confero-mobile/Frame 01.jpg"
+                    <LazyLoadImage
+                        srcLow="/confero-mobile/Frame 01 (2).jpg"
+                        srcHigh="/confero-mobile/Frame 01.jpg"
                         alt="app UI"
-                        loading="lazy"
-                        className="rounded-3xl w-full object-cover"
+                        classString="rounded-3xl w-full object-cover"
                     />
-                    <img
-                        src="confero-mobile/Frame 16.jpg"
+                    <LazyLoadImage
+                        srcLow="/confero-mobile/Frame 16 (2).jpg"
+                        srcHigh="/confero-mobile/Frame 16.jpg"
                         alt="app UI"
-                        loading="lazy"
-                        className="rounded-3xl w-full object-cover"
+                        classString="rounded-3xl w-full object-cover"
                     />
                 </div>
                 <video
@@ -112,68 +115,76 @@ export default function page() {
                     loop
                     playsInline
                     className="w-full rounded-3xl"
+                    poster="confero-mobile/chat.jpg"
                 >
                     <source src="confero-mobile/chat.mp4" type="video/mp4" />
                 </video>
 
-                <img
-                    src="confero-mobile/Frame 17.jpg"
+                <LazyLoadImage
+                    srcLow="/confero-mobile/Frame 17 (2).jpg"
+                    srcHigh="/confero-mobile/Frame 17.jpg"
                     alt="app UI"
-                    loading="lazy"
-                    className="rounded-3xl w-full object-cover"
+                    classString="rounded-3xl w-full object-cover"
                 />
-                <img
-                    src="confero-mobile/Frame 19.jpg"
+                <LazyLoadImage
+                    srcLow="/confero-mobile/Frame 19 (2).jpg"
+                    srcHigh="/confero-mobile/Frame 19.jpg"
                     alt="app UI"
-                    loading="lazy"
-                    className="rounded-3xl w-full object-cover"
+                    classString="rounded-3xl w-full object-cover"
                 />
-
                 <video
                     autoPlay
                     muted
                     loop
                     playsInline
                     className="w-full rounded-3xl"
+                    poster="confero-mobile/contact-call.jpg"
                 >
                     <source
                         src="confero-mobile/contact-call.mp4"
                         type="video/mp4"
                     />
                 </video>
-                <img
-                    src="confero-mobile/Frame 20.jpg"
+                <LazyLoadImage
+                    srcLow="/confero-mobile/Frame 20 (2).jpg"
+                    srcHigh="/confero-mobile/Frame 20.jpg"
                     alt="app UI"
-                    loading="lazy"
-                    className="rounded-3xl w-full object-cover"
+                    classString="rounded-3xl w-full object-cover"
                 />
-                <img
-                    src="confero-mobile/Frame 12.jpg"
+                <LazyLoadImage
+                    srcLow="/confero-mobile/Frame 12 (2).jpg"
+                    srcHigh="/confero-mobile/Frame 12.jpg"
                     alt="app UI"
-                    loading="lazy"
-                    className="rounded-3xl w-full object-cover"
+                    classString="rounded-3xl w-full object-cover"
                 />
-
                 <video
                     autoPlay
                     muted
                     loop
                     playsInline
                     className="w-full rounded-3xl"
+                    poster="confero-mobile/event-invite.jpg"
                 >
                     <source
                         src="confero-mobile/event-invite.mp4"
                         type="video/mp4"
                     />
                 </video>
-
-                <img
-                    src="confero-desktop/Frame 14.jpg"
+                <LazyLoadImage
+                    srcLow="/confero-desktop/Frame 14 (2).jpg"
+                    srcHigh="/confero-desktop/Frame 14.jpg"
                     alt="app UI"
-                    loading="lazy"
-                    className="rounded-3xl w-full object-cover"
+                    classString="rounded-3xl w-full object-cover"
                 />
             </section>
+            <a
+                href="https://www.notion.so/OLD-Confero-Mobile-1a45998c81ba80c4935df6d5a54799c3"
+                className="button-link w-full lg:w-[30%] mr-auto ml-auto px-8 py-3 rounded-[0.5rem] font-semibold text-center"
+                target="_blank"
+            >
+                See full project
+            </a>
+
             <Footer />
         </div>
     );

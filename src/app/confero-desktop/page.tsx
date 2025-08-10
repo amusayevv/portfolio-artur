@@ -186,6 +186,14 @@ export default function page() {
                     classString="w-full h-full object-contain rounded-3xl"
                 />
             </section>
+            <a
+                href="https://www.notion.so/OLD-Confero-Web-Desktop-19d5998c81ba8047b2b0fc5e592f8867"
+                className="button-link w-full lg:w-[30%] mr-auto ml-auto px-8 py-3 rounded-[0.5rem] font-semibold text-center"
+                target="_blank"
+            >
+                See full project
+            </a>
+
             <Footer />
         </div>
     );

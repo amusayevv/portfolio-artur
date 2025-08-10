@@ -159,6 +159,14 @@ export default function page() {
                     classString="w-full h-full object-contain rounded-3xl"
                 />
             </section>
+            <a
+                href="https://www.notion.so/OLD-Confero-TV-19f5998c81ba80d58345ff34d35c2fd8?source=copy_link"
+                className="button-link w-full lg:w-[30%] mr-auto ml-auto px-8 py-3 rounded-[0.5rem] font-semibold text-center"
+                target="_blank"
+            >
+                See full project
+            </a>
+
             <Footer />
         </div>
     );

@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { gsap } from "gsap";
 import Nav from "../_components/nav";
 import Footer from "../_components/footer";
+import { ExternalLinkIcon } from "@radix-ui/react-icons";
 
 export default function page() {
     return (
@@ -16,7 +17,7 @@ export default function page() {
             />
             <section className="flex lg:flex-row flex-col lg:gap-4 gap-12 px-6">
                 <div className="flex flex-col gap-10 flex-2/5">
-                    <div className="flex gap-4 items-center">
+                    <div className="flex gap-2 items-center">
                         <img
                             src="design-system/Frame_17.png"
                             alt="Synto logo"
@@ -27,22 +28,23 @@ export default function page() {
                         </h3>
                     </div>
                     <div className="flex gap-4 flex-wrap">
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            UI/UX Research
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            Design System
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            WEB Design
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            Branding
-                        </p>
-                        <p className="px-4 py-2 bg-white/10 rounded-[8px]">
-                            Corporate
-                        </p>
-                    </div>
+                        <a
+                            href="https://www.notion.so/Synto-Design-System-22e5998c81ba80a0969df8d596459e94"
+                            target="_blank"
+                            className="px-4 py-2 bg-white/10 rounded-[8px] flex gap-2 items-center"
+                        >
+                            <ExternalLinkIcon />
+                            Notion
+                        </a>
+                        <a
+                            href="https://www.figma.com/design/tgJvw3gJTraZGHGdwNh7e9/Synto?node-id=0-1&t=SNFUpFiUSieBc44G-1"
+                            target="_blank"
+                            className="px-4 py-2 bg-white/10 rounded-[8px] flex gap-2 items-center"
+                        >
+                            <ExternalLinkIcon />
+                            Figma
+                        </a>
+                    </div>{" "}
                     <a
                         href="https://www.linkedin.com/in/artur-yurin/"
                         target="_blank"
@@ -56,25 +58,26 @@ export default function page() {
                         <p className="text-white/60">Problem</p>
                         <p className="text-white/90 flex flex-col gap-4">
                             The system we had didn’t work well anymore:
-                            <ul className="list-disc pl-4 flex flex-col gap-2">
-                                <li>
-                                    Designers often detached components and
-                                    changed them manually
-                                </li>
-                                <li>
-                                    Developers didn’t have a clear source of
-                                    truth
-                                </li>
-                                <li>
-                                    Tokens didn’t exist, colors and spacing were
-                                    added by hand
-                                </li>
-                                <li>
-                                    Components were outdated, without variants
-                                    or responsive layout
-                                </li>
-                                <li>There was no documentation at all</li>
-                            </ul>
+                        </p>
+                        <ul className="list-[circle] pl-4 flex flex-col gap-2">
+                            <li>
+                                Designers often detached components and changed
+                                them manually
+                            </li>
+                            <li>
+                                Developers didn’t have a clear source of truth
+                            </li>
+                            <li>
+                                Tokens didn’t exist, colors and spacing were
+                                added by hand
+                            </li>
+                            <li>
+                                Components were outdated, without variants or
+                                responsive layout
+                            </li>
+                            <li>There was no documentation at all</li>
+                        </ul>
+                        <p>
                             Each product looked different. Sometimes even
                             screens inside the same product had no connection in
                             style. When new teams joined, they couldn’t rely on
@@ -82,7 +85,7 @@ export default function page() {
                             everything worse. <br />
                             <br /> Eventually, it slowed down the entire
                             workflow. It wasn’t just a design problem, it became
-                            a team and business problem.{" "}
+                            a team and business problem.
                         </p>
                     </div>
                     <div className="flex flex-col gap-4">
@@ -172,6 +175,14 @@ export default function page() {
                     className="rounded-3xl w-full object-cover"
                 />
             </section>
+            <a
+                href="https://www.notion.so/Synto-Design-System-22e5998c81ba80a0969df8d596459e94"
+                className="button-link w-full lg:w-[30%] mr-auto ml-auto px-8 py-3 rounded-[0.5rem] font-semibold text-center"
+                target="_blank"
+            >
+                See full project
+            </a>
+
             <Footer />
         </div>
     );

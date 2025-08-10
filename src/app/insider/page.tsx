@@ -195,7 +195,7 @@ export default function Page() {
                 </video>
                 <a
                     href="https://www.notion.so/OLD-Insider-Platform-1055998c81ba809fbb46e2c2c8e49b91?source=copy_link"
-                    className="button-link px-8 py-3 rounded-[0.5rem] font-semibold text-center"
+                    className="button-link w-[30%] mr-auto ml-auto px-8 py-3 rounded-[0.5rem] font-semibold text-center"
                     target="_blank"
                 >
                     See full project
