@@ -2,6 +2,7 @@
 import { ExternalLinkIcon } from "@radix-ui/react-icons";
 import Nav from "../_components/nav";
 import Footer from "../_components/footer";
+import LazyLoadImage from "../_components/lazyLoadImage";
 
 export default function page() {
     return (
@@ -82,86 +83,11 @@ export default function page() {
             </section>
 
             <section className="flex flex-col gap-10 px-6">
-                <img
-                    src="confero-desktop-2.jpg"
+                <LazyLoadImage
+                    srcLow="/confero-desktop/confero-desktop-2 (2).jpg"
+                    srcHigh="/confero-desktop/confero-desktop-2.jpg"
                     alt="app UI"
-                    loading="lazy"
-                    className="rounded-3xl w-full object-cover"
-                />
-                <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full rounded-3xl"
-                >
-                    <source
-                        src="confero-desktop/active-event.mp4"
-                        type="video/mp4"
-                    />
-                </video>
-                <img
-                    src="confero-desktop-3.jpg"
-                    alt="app UI"
-                    loading="lazy"
-                    className="rounded-3xl w-full object-cover"
-                />
-                <div>
-                    <img
-                        src="confero-desktop/Frame 01.jpg"
-                        alt="about corporate messenger and video conferencing 01 Simplified navigation. Users can now find key functions faster and more intuitively 02 Faster meeting creation. The process is clearer, more flexible, and takes less time 03 Intuitive meeting management. Moderators can now react quickly and efficiently"
-                        loading="lazy"
-                        className="rounded-3xl w-full object-cover"
-                    />
-                    <img
-                        src="confero-desktop/Frame 02.jpg"
-                        alt="app UI"
-                        loading="lazy"
-                        className="rounded-3xl w-full object-cover"
-                    />
-                </div>
-                <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full rounded-3xl"
-                >
-                    <source
-                        src="confero-desktop/contacts.mp4"
-                        type="video/mp4"
-                    />
-                </video>
-                <img
-                    src="confero-desktop/Frame 04.jpg"
-                    alt="app UI"
-                    loading="lazy"
-                    className="rounded-3xl w-full object-cover"
-                />
-                <img
-                    src="confero-desktop/Frame 06.jpg"
-                    alt="app UI"
-                    loading="lazy"
-                    className="rounded-3xl w-full object-cover"
-                />
-                <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full rounded-3xl"
-                >
-                    <source
-                        src="confero-desktop/events (1080p).webm"
-                        type="video/webm"
-                    />
-                    <source src="confero-desktop/events.mp4" type="video/mp4" />
-                </video>
-                <img
-                    src="confero-desktop/Frame 12.jpg"
-                    alt="app UI"
-                    loading="lazy"
-                    className="rounded-3xl w-full object-cover"
+                    classString="w-full h-full object-contain rounded-3xl"
                 />
 
                 <video
@@ -170,17 +96,94 @@ export default function page() {
                     loop
                     playsInline
                     className="w-full rounded-3xl"
+                    poster="confero-desktop/active-event.jpg"
+                >
+                    <source
+                        src="confero-desktop/active-event.mp4"
+                        type="video/mp4"
+                    />
+                </video>
+
+                <LazyLoadImage
+                    srcLow="/confero-desktop/confero-desktop-3 (2).jpg"
+                    srcHigh="/confero-desktop/confero-desktop-3.jpg"
+                    alt="app UI"
+                    classString="w-full h-full object-contain rounded-3xl"
+                />
+
+                <div>
+                    <LazyLoadImage
+                        srcLow="/confero-desktop/Frame 01 (2).jpg"
+                        srcHigh="/confero-desktop/Frame 01.jpg"
+                        alt="about corporate messenger and video conferencing 01 Simplified navigation. Users can now find key functions faster and more intuitively 02 Faster meeting creation. The process is clearer, more flexible, and takes less time 03 Intuitive meeting management. Moderators can now react quickly and efficiently"
+                        classString="rounded-3xl w-full object-cover"
+                    />
+                    <LazyLoadImage
+                        srcLow="/confero-desktop/Frame 02 (2).jpg"
+                        srcHigh="/confero-desktop/Frame 02.jpg"
+                        alt="app UI"
+                        classString="rounded-3xl w-full object-cover"
+                    />
+                </div>
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full rounded-3xl"
+                    poster="confero-desktop/contacts.jpg"
+                >
+                    <source
+                        src="confero-desktop/contacts.mp4"
+                        type="video/mp4"
+                    />
+                </video>
+                <LazyLoadImage
+                    srcLow="/confero-desktop/Frame 04 (2).jpg"
+                    srcHigh="/confero-desktop/Frame 04.jpg"
+                    alt="app UI"
+                    classString="w-full h-full object-contain rounded-3xl"
+                />
+                <LazyLoadImage
+                    srcLow="/confero-desktop/Frame 06 (2).jpg"
+                    srcHigh="/confero-desktop/Frame 06.jpg"
+                    alt="app UI"
+                    classString="w-full h-full object-contain rounded-3xl"
+                />
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full rounded-3xl"
+                    poster="confero-desktop/events.jpg"
+                >
+                    <source src="confero-desktop/events.mp4" type="video/mp4" />
+                </video>
+                <LazyLoadImage
+                    srcLow="/confero-desktop/Frame 12 (2).jpg"
+                    srcHigh="/confero-desktop/Frame 12.jpg"
+                    alt="app UI"
+                    classString="w-full h-full object-contain rounded-3xl"
+                />
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full rounded-3xl"
+                    poster="confero-desktop/desktop-chats.jpg"
                 >
                     <source
                         src="confero-desktop/desktop-chats.mp4"
                         type="video/mp4"
                     />
                 </video>
-                <img
-                    src="confero-desktop/Frame 14.jpg"
+                <LazyLoadImage
+                    srcLow="/confero-desktop/Frame 14 (2).jpg"
+                    srcHigh="/confero-desktop/Frame 14.jpg"
                     alt="app UI"
-                    loading="lazy"
-                    className="rounded-3xl w-full object-cover"
+                    classString="w-full h-full object-contain rounded-3xl"
                 />
             </section>
             <Footer />
