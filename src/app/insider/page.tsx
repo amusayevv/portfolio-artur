@@ -30,7 +30,7 @@ export default function Page() {
                             Platform
                         </a>
                         <a
-                            href="https://www.notion.so/OLD-Insider-Platform-1055998c81ba809fbb46e2c2c8e49b91"
+                            href="https://developing-allium-e20.notion.site/Insider-Platform-20c5998c81ba81cd821cc85d70dcc40c"
                             target="_blank"
                             className="px-4 py-2 bg-white/10 rounded-[8px] flex gap-2 items-center"
                         >
@@ -194,7 +194,7 @@ export default function Page() {
                     />
                 </video>
                 <a
-                    href="https://www.notion.so/OLD-Insider-Platform-1055998c81ba809fbb46e2c2c8e49b91?source=copy_link"
+                    href="https://developing-allium-e20.notion.site/Insider-Platform-20c5998c81ba81cd821cc85d70dcc40c"
                     className="button-link w-[30%] mr-auto ml-auto px-8 py-3 rounded-[0.5rem] font-semibold text-center"
                     target="_blank"
                 >

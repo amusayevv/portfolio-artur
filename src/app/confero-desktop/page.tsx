@@ -24,7 +24,7 @@ export default function page() {
                     </div>
                     <div className="flex gap-4 flex-wrap">
                         <a
-                            href="https://www.notion.so/OLD-Confero-Web-Desktop-19d5998c81ba8047b2b0fc5e592f8867"
+                            href="https://developing-allium-e20.notion.site/Confero-Web-Desktop-20c5998c81ba81179f51f663ae42f7d5?pvs=143"
                             target="_blank"
                             className="px-4 py-2 bg-white/10 rounded-[8px] flex gap-2 items-center"
                         >
@@ -187,7 +187,7 @@ export default function page() {
                 />
             </section>
             <a
-                href="https://www.notion.so/OLD-Confero-Web-Desktop-19d5998c81ba8047b2b0fc5e592f8867"
+                href="https://developing-allium-e20.notion.site/Confero-Web-Desktop-20c5998c81ba81179f51f663ae42f7d5?pvs=143"
                 className="button-link w-full lg:w-[30%] mr-auto ml-auto px-8 py-3 rounded-[0.5rem] font-semibold text-center"
                 target="_blank"
             >

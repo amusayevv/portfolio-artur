@@ -210,17 +210,10 @@ export default function Page() {
                     <div className="grid lg:grid-cols-2 grid-cols-1 gap-10">
                         <div className="flex flex-col gap-10">
                             <PortfolioCard
-                                imgpath="/project1.webp"
-                                logopath="/insider.svg"
-                                url="/insider"
-                                title="Insider"
-                                description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
-                            />
-                            <PortfolioCard
-                                imgpath="/project2.webp"
+                                imgpath="/design-system/image.webp"
                                 logopath="/confero.svg"
-                                url="confero-desktop"
-                                title="Confero Desktop"
+                                url="/synto"
+                                title="Synto Design System"
                                 description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
                             />
                             <PortfolioCard
@@ -230,8 +223,23 @@ export default function Page() {
                                 title="Confero Mobile"
                                 description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
                             />
+
+                            <PortfolioCard
+                                imgpath="/project1.webp"
+                                logopath="/insider.svg"
+                                url="/insider"
+                                title="Insider"
+                                description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
+                            />
                         </div>
                         <div className="flex flex-col gap-10">
+                            <PortfolioCard
+                                imgpath="/project2.webp"
+                                logopath="/confero.svg"
+                                url="confero-desktop"
+                                title="Confero Desktop"
+                                description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
+                            />
                             <PortfolioCard
                                 imgpath="/project4.webp"
                                 logopath="/confero.svg"
@@ -244,13 +252,6 @@ export default function Page() {
                                 logopath="/confero.svg"
                                 url="/sbc"
                                 title="SBC"
-                                description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
-                            />
-                            <PortfolioCard
-                                imgpath="/design-system/image.webp"
-                                logopath="/confero.svg"
-                                url="/synto"
-                                title="Synto Design System"
                                 description="Insider is a smart dashboard that boosts your digital experience with quick access, skill-building tools, and an automated Trading Bot."
                             />
                         </div>

@@ -29,7 +29,7 @@ export default function page() {
                     </div>
                     <div className="flex gap-4 flex-wrap">
                         <a
-                            href="https://www.notion.so/Synto-Design-System-22e5998c81ba80a0969df8d596459e94"
+                            href="https://developing-allium-e20.notion.site/Synto-Design-System-22b5998c81ba8054af7fcc0e722dc13c?pvs=143"
                             target="_blank"
                             className="px-4 py-2 bg-white/10 rounded-[8px] flex gap-2 items-center"
                         >
@@ -176,7 +176,7 @@ export default function page() {
                 />
             </section>
             <a
-                href="https://www.notion.so/Synto-Design-System-22e5998c81ba80a0969df8d596459e94"
+                href="https://developing-allium-e20.notion.site/Synto-Design-System-22b5998c81ba8054af7fcc0e722dc13c?pvs=143"
                 className="button-link w-full lg:w-[30%] mr-auto ml-auto px-8 py-3 rounded-[0.5rem] font-semibold text-center"
                 target="_blank"
             >

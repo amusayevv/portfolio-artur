@@ -22,7 +22,7 @@ export default function page() {
                     </div>
                     <div className="flex gap-4 flex-wrap">
                         <a
-                            href="https://www.notion.so/OLD-Confero-Mobile-1a45998c81ba80c4935df6d5a54799c3"
+                            href="https://developing-allium-e20.notion.site/Confero-Mobile-App-20c5998c81ba813f9e43e8b3e522bb46"
                             target="_blank"
                             className="px-4 py-2 bg-white/10 rounded-[8px] flex gap-2 items-center"
                         >
@@ -178,7 +178,7 @@ export default function page() {
                 />
             </section>
             <a
-                href="https://www.notion.so/OLD-Confero-Mobile-1a45998c81ba80c4935df6d5a54799c3"
+                href="https://developing-allium-e20.notion.site/Confero-Mobile-App-20c5998c81ba813f9e43e8b3e522bb46"
                 className="button-link w-full lg:w-[30%] mr-auto ml-auto px-8 py-3 rounded-[0.5rem] font-semibold text-center"
                 target="_blank"
             >
